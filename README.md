@@ -55,11 +55,9 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
 
   - Primește PlaceOrderCommand.
   - Execută ValidateOrder.
-Dacă e valid, execută CheckStock.
-
-Execută CalculateFinalAmount.
-
-Salvează starea și publică evenimentul OrderPlacedEvent (pentru a notifica Billing și Shipping).
+  - Dacă e valid, execută CheckStock.
+  - Execută CalculateFinalAmount.
+  - Salvează starea și publică evenimentul OrderPlacedEvent (pentru a notifica Billing și Shipping).
 
 ## Rulare
 ```bash
