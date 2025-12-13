@@ -35,8 +35,10 @@ Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta val
   - ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat).
 
 - Context Facturare:
-  - 1 
-  - 2
+  - InvoiceNumber: cod unic al facturii. 
+  - BillingAddress: adresa de facturare (stradă, oraș, cod poștal validat).
+  - Money/Price: Valoare zecimală + Monedă, nu permite valori negative.
+  - TaxRate: procent TVA (ex: 19%).
 
 - Context Livrare:
   - 1
@@ -52,8 +54,10 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
   - PaidOrder: Confirmarea plății a fost primită, gata de expediere.
 
 - Context Facturare:
-  - 1 
-  - 2
+  - UnvalidatedInvoice: Factură inițială derivată dintr-o comandă, care poate avea date fiscale sau adresă de facturare invalide / incomplete.
+  - ValidatedInvoice: Factură pentru care au fost verificate datele clientului, adresa de facturare și cotele de TVA, gata pentru calculul sumelor.
+  - CalculatedInvoice: Factură cu subtotal, TVA și total final calculat, pregătită de emis către client.
+  - PaidInvoice: Factură pentru care plata a fost confirmată și poate declanșa workflow-ul de livrare, similar cu PaidOrder.
 
 - Context Livrare:
   - 1
@@ -69,8 +73,10 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - GenerateAwb: Operație specifică contextului de Shipping.
 
 - Context Facturare:
-  - 1 
-  - 2
+  - GenerateInvoiceDraft: UnvalidatedOrder -> Result<UnvalidatedInvoice> (Construiește un draft de factură pe baza comenzii, fără garanții de validitate fiscală).
+  - ValidateInvoice: UnvalidatedInvoice -> Result<ValidatedInvoice> (Verifică datele clientului, adresa de facturare și regulile de TVA).
+  - CalculateInvoiceTotals: ValidatedInvoice -> CalculatedInvoice (Calculează subtotalul, TVA și totalul de plată).
+  - MarkInvoiceAsPaid: CalculatedInvoice -> PaidInvoice (Actualizează starea facturii la plătită pe baza confirmării de plată).
 
 - Context Livrare:
   - 1
@@ -84,7 +90,13 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - Execută CalculateFinalAmount.
   - Salvează starea și publică evenimentul OrderPlacedEvent (pentru a notifica Billing și Shipping).
 
-- workflow2
+- BillingWorkflow:
+  - Primește eveniment OrderPlacedEvent.
+  - Creează UnvalidatedInvoice din comandă.
+  - Rulează ValidateInvoice → ValidatedInvoice.
+  - Rulează CalculateInvoiceTotals → CalculatedInvoice.
+  - La confirmarea plății, marchează factura ca PaidInvoice și publică evenimentul InvoicePaidEvent pentru Shipping.
+    
 - workflow 3
   
 ## Rulare
