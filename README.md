@@ -45,28 +45,48 @@ Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta val
 ### Entity States (Exemplu pentru Workflow-ul "Preluare Comandă")
 Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța verificarea lor la compilare.
 
-- UnvalidatedOrder: Comanda brută primită de la client (poate avea stoc lipsă, adresă invalidă).
-- ValidatedOrder: Comanda a trecut validările, stocul este rezervat.
-- CalculatedOrder: Prețul total (inclusiv discount-uri) a fost aplicat.
-- PaidOrder: Confirmarea plății a fost primită, gata de expediere.
+- Context Vanzari:
+  - UnvalidatedOrder: Comanda brută primită de la client (poate avea stoc lipsă, adresă invalidă).
+  - ValidatedOrder: Comanda a trecut validările, stocul este rezervat.
+  - CalculatedOrder: Prețul total (inclusiv discount-uri) a fost aplicat.
+  - PaidOrder: Confirmarea plății a fost primită, gata de expediere.
+
+- Context Facturare:
+  - 1 
+  - 2
+
+- Context Livrare:
+  - 1
+  - 2
 
 ### Operations
 Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în alta.
 
-- ValidateOrder: UnvalidatedOrder -> Result<ValidatedOrder> (Verifică existența produselor și formatul adresei).
-- CalculatePrices: ValidatedOrder -> CalculatedOrder (Aplică logica de preț).
-- ProcessPayment: Comunică cu gateway-ul de plată.
-- GenerateAwb: Operație specifică contextului de Shipping.
+- Context Vanzari:
+  - ValidateOrder: UnvalidatedOrder -> Result<ValidatedOrder> (Verifică existența produselor și formatul adresei).
+  - CalculatePrices: ValidatedOrder -> CalculatedOrder (Aplică logica de preț).
+  - ProcessPayment: Comunică cu gateway-ul de plată.
+  - GenerateAwb: Operație specifică contextului de Shipping.
+
+- Context Facturare:
+  - 1 
+  - 2
+
+- Context Livrare:
+  - 1
+  - 2
 
 ### Workflow
 - PlaceOrderWorkflow: Acest workflow orchestrează procesul de cumpărare:
-
   - Primește PlaceOrderCommand.
   - Execută ValidateOrder.
   - Dacă e valid, execută CheckStock.
   - Execută CalculateFinalAmount.
   - Salvează starea și publică evenimentul OrderPlacedEvent (pentru a notifica Billing și Shipping).
 
+- workflow2
+- workflow 3
+  
 ## Rulare
 ```bash
 
