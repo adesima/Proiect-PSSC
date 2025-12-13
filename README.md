@@ -1,4 +1,4 @@
-# E-Commerce System (Order, Billing & Shipping) - DDD Lab
+# E-Commerce System (Order, Billing & Shipping) 
 
 ## Echipa
 - Isac Lucas-Horatiu
