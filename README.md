@@ -1,4 +1,4 @@
-# Proiect-PSSC
+# E-Commerce System (Order, Billing & Shipping) - DDD Lab
 
 ## Echipa
 - Isac Lucas-Horatiu
@@ -6,63 +6,91 @@
 - Sima Adelin-Sebastian
 
 ## Domeniul Ales
-[Numele domeniului: Exam Scheduling / Dormitory Allocation / Study Space Reservation]
+Sistem de Gestiune Comenzi Magazin Online (Retail / E-commerce)
 
 ## Descriere
-[Scurtă descriere a sistemului implementat]
+Proiectul vizează implementarea unui sistem distribuit pentru gestionarea fluxului complet al unei comenzi într-un magazin online. Sistemul este împărțit în trei bounded context-uri distincte care comunică asincron prin mesaje (events).
+
+Obiectivul principal este modelarea corectă a domeniului folosind principii DDD (Domain-Driven Design) și o abordare funcțională în C# (sistem de tipuri bogat, imutabilitate, pipeline-uri de operații).
 
 ## Bounded Contexts Identificate
-1. **[Context 1]**: [Responsabilități]
-2. **[Context 2]**: [Responsabilități]
+Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
+
+- Ordering Context: Responsabil de preluarea comenzilor, validarea coșului de cumpărături, calculul prețului inițial și gestionarea stocului disponibil.
+
+- Invoicing (Billing) Context: Responsabil de procesarea plăților, generarea facturilor fiscale pe baza comenzilor validate și calculul taxelor (TVA).
+
+- Shipping Context: Responsabil de generarea AWB-urilor, alocarea curierilor și gestionarea stării livrării către client.
 
 ## Event Storming Results
-[Link la diagram sau imagine]
+[Link către diagrama Event Storming sau imagine exportată din Miro/Lucid] (Aici ar trebui să apară fluxul: OrderPlaced -> InvoiceGenerated -> PaymentSucceeded -> ShippingRequested -> PackageShipped)
 
 ## Implementare
-
 ### Value Objects
-- `[ValueObject1]`: [Descriere]
-- `[ValueObject2]`: [Descriere]
+Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta validitatea datelor la nivelul cel mai jos.
 
-### Entity States
-- `Unvalidated[Entity]`: [When]
-- `Validated[Entity]`: [When]
-- ...
+- ProductCode: Format specific (ex: SKU-12345).
+- Quantity: Număr întreg strict pozitiv (>0).
+- Money/Price: Valoare zecimală + Monedă, nu permite valori negative.
+- ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat).
+
+### Entity States (Exemplu pentru Workflow-ul "Preluare Comandă")
+Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța verificarea lor la compilare.
+
+- UnvalidatedOrder: Comanda brută primită de la client (poate avea stoc lipsă, adresă invalidă).
+- ValidatedOrder: Comanda a trecut validările, stocul este rezervat.
+- CalculatedOrder: Prețul total (inclusiv discount-uri) a fost aplicat.
+- PaidOrder: Confirmarea plății a fost primită, gata de expediere.
 
 ### Operations
-1. `Validate[Entity]Operation`: [Ce face]
-2. `[Business]Operation`: [Ce face]
+Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în alta.
+
+- ValidateOrder: UnvalidatedOrder -> Result<ValidatedOrder> (Verifică existența produselor și formatul adresei).
+- CalculatePrices: ValidatedOrder -> CalculatedOrder (Aplică logica de preț).
+- ProcessPayment: Comunică cu gateway-ul de plată.
+- GenerateAwb: Operație specifică contextului de Shipping.
 
 ### Workflow
-`[Action][Entity]Workflow`: [Descriere pipeline]
+- PlaceOrderWorkflow: Acest workflow orchestrează procesul de cumpărare:
+
+  - Primește PlaceOrderCommand.
+  - Execută ValidateOrder.
+Dacă e valid, execută CheckStock.
+
+Execută CalculateFinalAmount.
+
+Salvează starea și publică evenimentul OrderPlacedEvent (pentru a notifica Billing și Shipping).
 
 ## Rulare
-
 ```bash
-# Compile
+
+# Compile solution
 dotnet build
 
-# Run console app
-dotnet run --project src/LabDDD.ConsoleApp
+# Run Ordering Context (Console App)
+dotnet run --project src/Ordering.ConsoleApp
 
-# Run tests
+# Run Tests
 dotnet test
 ```
 
 ## Lecții Învățate
-
 ### Ce a funcționat bine cu AI
-- [Punct 1]
-- [Punct 2]
+- Generarea rapidă a structurilor de tip record (C# 9+) pentru stările imutabile.
+- Sugestii pentru implementarea pattern-ului Result<T> pentru a evita excepțiile în flow control.
+- Idei pentru structurarea mesajelor JSON pentru comunicarea asincronă.
 
 ### Limitări ale AI identificate
-- [Limitare 1]
-- [Limitare 2]
+- Dificultate în a înțelege nuanțele specifice ale comunicării asincrone între cele 3 contexte (uneori sugera apeluri directe HTTP în loc de mesagerie).
+- Codul generat uneori ignora tratarea cazurilor de eroare (failure paths) în pipeline-uri complexe.
 
 ### Prompturi Utile
 ```
-[Prompt 1 care a generat cod bun]
+"Generează o clasă C# record 'Quantity' care să nu permită valori negative 
+și să returneze un 'Result' la creare, în stil funcțional."
 ```
 
 ## Design Decisions
-[Link la docs/DesignDecisions.md pentru detalii]
+- Am ales să folosim Azure Service Bus / RabbitMQ / In-Memory Queue (alege una) pentru comunicarea asincronă între contexte.
+- Logica de domeniu este pură, fără dependențe de baza de date (Persistence Ignorance).
+- Detalii complete în [docs/DesignDecisions.md].
