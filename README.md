@@ -28,12 +28,20 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 ## Implementare
 ### Value Objects
 Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta validitatea datelor la nivelul cel mai jos.
+- Context Vanzari:
+  - ProductCode: Format specific (ex: SKU-12345).
+  - Quantity: Număr întreg strict pozitiv (>0).
+  - Money/Price: Valoare zecimală + Monedă, nu permite valori negative.
+  - ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat).
 
-- ProductCode: Format specific (ex: SKU-12345).
-- Quantity: Număr întreg strict pozitiv (>0).
-- Money/Price: Valoare zecimală + Monedă, nu permite valori negative.
-- ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat).
+- Context Facturare:
+  - 1 
+  - 2
 
+- Context Livrare:
+  - 1
+  - 2
+   
 ### Entity States (Exemplu pentru Workflow-ul "Preluare Comandă")
 Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța verificarea lor la compilare.
 
