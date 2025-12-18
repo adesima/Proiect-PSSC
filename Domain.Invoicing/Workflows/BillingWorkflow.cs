@@ -1,12 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Domain.Invoicing.Models;
+using Domain.Invoicing.Operations;
 
 namespace Domain.Invoicing.Workflows
 {
-    internal class BillingWorkflow
+    public class BillingWorkflow
     {
+        public PaidInvoice Execute(
+            GenerateInvoiceDraftCommand command,
+            PaymentConfirmedEvent payment)
+        {
+            // draft
+            UnvalidatedInvoice unvalidated =
+                new GenerateInvoiceDraftOperation()
+                    .Transform(command, null);
+
+            // validated
+            ValidatedInvoice validated =
+                new ValidateInvoiceOperation()
+                    .Transform(unvalidated, null);
+
+            // calculated
+            CalculatedInvoice calculated =
+                new CalculateInvoiceTotalsOperation()
+                    .Transform(validated, null);
+
+            // paid
+            PaidInvoice paid =
+                new MarkInvoiceAsPaidOperation()
+                    .Transform(calculated, payment);
+
+            return paid;
+        }
     }
 }

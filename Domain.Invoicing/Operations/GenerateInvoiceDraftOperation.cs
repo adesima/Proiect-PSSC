@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Invoicing.Models;
 
-namespace Domain.Invoicing.Operations
+namespace Domain.Invoicing.Operations;
+
+public class GenerateInvoiceDraftOperation
+    : DomainOperation<GenerateInvoiceDraftCommand, object, UnvalidatedInvoice>
 {
-    internal class GenerateInvoiceDraftOperation
+    public override UnvalidatedInvoice Transform(GenerateInvoiceDraftCommand command, object? _)
     {
+        return new UnvalidatedInvoice
+        {
+            OrderId = command.OrderId,
+            CustomerId = command.CustomerId,
+            BillingAddress = command.BillingAddress,
+            Lines = command.Lines
+        };
     }
 }

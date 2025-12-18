@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Domain.Invoicing.Models;
 
-namespace Domain.Invoicing.Models
+public record InvoicePaidEvent
 {
-    internal class InvoicePaidEvent
-    {
-    }
+    public Guid InvoiceId { get; init; }
+    public Guid OrderId { get; init; }
+    public required Money Amount { get; init; }
+    public DateTime PaidAt { get; init; }
 }
