@@ -1,10 +1,13 @@
-﻿namespace Domain.Invoicing.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace Domain.Invoicing.Models;
 
 public record Money
 {
     public decimal Amount { get; }
     public string Currency { get; }
 
+    [JsonConstructor]
     private Money(decimal amount, string currency)
     {
         Amount = amount;

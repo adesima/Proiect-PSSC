@@ -1,4 +1,6 @@
-﻿namespace Domain.Invoicing.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace Domain.Invoicing.Models;
 
 public record BillingAddress
 {
@@ -6,6 +8,7 @@ public record BillingAddress
     public string City { get; }
     public string PostalCode { get; }
 
+    [JsonConstructor]
     private BillingAddress(string street, string city, string postalCode)
     {
         Street = street;

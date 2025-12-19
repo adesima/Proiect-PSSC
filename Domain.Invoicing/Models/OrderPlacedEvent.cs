@@ -1,4 +1,6 @@
-﻿namespace Domain.Invoicing.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace Domain.Invoicing.Models;
 
 public record OrderPlacedEvent
 {
@@ -8,4 +10,17 @@ public record OrderPlacedEvent
     public IReadOnlyCollection<OrderLine> Lines { get; init; } = Array.Empty<OrderLine>();
 }
 
-public record OrderLine(string ProductCode, int Quantity, Money UnitPrice);
+public record OrderLine
+{
+    public string ProductCode { get; init; }
+    public int Quantity { get; init; }
+    public Money UnitPrice { get; init; }
+
+    [JsonConstructor]
+    public OrderLine(string productCode, int quantity, Money unitPrice)
+    {
+        ProductCode = productCode;
+        Quantity = quantity;
+        UnitPrice = unitPrice;
+    }
+}

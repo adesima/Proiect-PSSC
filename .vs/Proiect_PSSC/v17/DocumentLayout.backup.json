@@ -1,0 +1,346 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{94D80156-C931-43EB-9519-98C704E7C28A}|Billing.ConsoleApp\\Billing.ConsoleApp.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94D80156-C931-43EB-9519-98C704E7C28A}|Billing.ConsoleApp\\Billing.ConsoleApp.csproj|solutionrelative:billing.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94D80156-C931-43EB-9519-98C704E7C28A}|Billing.ConsoleApp\\Billing.ConsoleApp.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.consoleapp\\billing.consoleapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{94D80156-C931-43EB-9519-98C704E7C28A}|Billing.ConsoleApp\\Billing.ConsoleApp.csproj|solutionrelative:billing.consoleapp\\billing.consoleapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\billing.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\billing.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\orderplacedlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\orderplacedlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\messaging\\orderconfirmedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\messaging\\orderconfirmedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\orderplacedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\orderplacedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\billingaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\billingaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\taxrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\taxrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\billing.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\billing.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\models\\payinvoiceinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\models\\payinvoiceinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\messaging\\invoicepaidmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\messaging\\invoicepaidmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\repositories\\invoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\repositories\\invoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\models\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\models\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\billingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\billingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\repositories\\iinvoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\repositories\\iinvoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\domain.invoicing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\domain.invoicing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TaxRate.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\TaxRate.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\TaxRate.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\TaxRate.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Models\\TaxRate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T23:35:55.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Money.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\Money.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\Money.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\Money.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Models\\Money.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T23:35:39.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BillingAddress.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\BillingAddress.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\BillingAddress.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\BillingAddress.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Models\\BillingAddress.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T23:35:11.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Billing.ConsoleApp.csproj",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.ConsoleApp\\Billing.ConsoleApp.csproj",
+              "RelativeDocumentMoniker": "Billing.ConsoleApp\\Billing.ConsoleApp.csproj",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.ConsoleApp\\Billing.ConsoleApp.csproj",
+              "RelativeToolTip": "Billing.ConsoleApp\\Billing.ConsoleApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-18T22:49:49.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderPlacedListener.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\OrderPlacedListener.cs",
+              "RelativeDocumentMoniker": "Billing.Api\\OrderPlacedListener.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\OrderPlacedListener.cs",
+              "RelativeToolTip": "Billing.Api\\OrderPlacedListener.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwDMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T22:41:16.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InvoicePaidMessage.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\InvoicePaidMessage.cs",
+              "RelativeDocumentMoniker": "Billing.Api\\Messaging\\InvoicePaidMessage.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\InvoicePaidMessage.cs",
+              "RelativeToolTip": "Billing.Api\\Messaging\\InvoicePaidMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T22:35:47.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderConfirmedMessage.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
+              "RelativeDocumentMoniker": "Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
+              "RelativeToolTip": "Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T22:34:57.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.ConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "Billing.ConsoleApp\\Program.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.ConsoleApp\\Program.cs",
+              "RelativeToolTip": "Billing.ConsoleApp\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAYwB8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T21:10:55.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderPlacedEvent.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAgwBMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T21:08:25.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PayInvoiceInput.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Models\\PayInvoiceInput.cs",
+              "RelativeDocumentMoniker": "Billing.Api\\Models\\PayInvoiceInput.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Models\\PayInvoiceInput.cs",
+              "RelativeToolTip": "Billing.Api\\Models\\PayInvoiceInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T20:55:41.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Billing.Api.csproj",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Billing.Api.csproj",
+              "RelativeDocumentMoniker": "Billing.Api\\Billing.Api.csproj",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Billing.Api.csproj",
+              "RelativeToolTip": "Billing.Api\\Billing.Api.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-18T20:55:09.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Billing.Api\\appsettings.json",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\appsettings.json",
+              "RelativeToolTip": "Billing.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-18T20:46:16.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InvoicesController.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Controllers\\InvoicesController.cs",
+              "RelativeDocumentMoniker": "Billing.Api\\Controllers\\InvoicesController.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Controllers\\InvoicesController.cs",
+              "RelativeToolTip": "Billing.Api\\Controllers\\InvoicesController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAjwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T20:43:46.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Billing.Api\\Program.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Program.cs",
+              "RelativeToolTip": "Billing.Api\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T20:37:13.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "InvoicesRepository.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Repositories\\InvoicesRepository.cs",
+              "RelativeDocumentMoniker": "Billing.Data\\Repositories\\InvoicesRepository.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Repositories\\InvoicesRepository.cs",
+              "RelativeToolTip": "Billing.Data\\Repositories\\InvoicesRepository.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T19:48:37.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "InvoiceDto.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Models\\InvoiceDto.cs",
+              "RelativeDocumentMoniker": "Billing.Data\\Models\\InvoiceDto.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Models\\InvoiceDto.cs",
+              "RelativeToolTip": "Billing.Data\\Models\\InvoiceDto.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T19:38:28.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Billing.Data.csproj",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Billing.Data.csproj",
+              "RelativeDocumentMoniker": "Billing.Data\\Billing.Data.csproj",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Billing.Data.csproj",
+              "RelativeToolTip": "Billing.Data\\Billing.Data.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-18T19:37:56.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BillingContext.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\BillingContext.cs",
+              "RelativeDocumentMoniker": "Billing.Data\\BillingContext.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\BillingContext.cs",
+              "RelativeToolTip": "Billing.Data\\BillingContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T19:35:05.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IInvoicesRepository.cs",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T19:29:48.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Domain.Invoicing.csproj",
+              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Domain.Invoicing.csproj",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Domain.Invoicing.csproj",
+              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Domain.Invoicing.csproj",
+              "RelativeToolTip": "Domain.Invoicing\\Domain.Invoicing.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-18T19:29:13.609Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

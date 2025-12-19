@@ -1,9 +1,12 @@
-﻿namespace Domain.Invoicing.Models;
+﻿using System.Text.Json.Serialization;
+
+namespace Domain.Invoicing.Models;
 
 public record TaxRate
 {
     public decimal Percent { get; }
 
+    [JsonConstructor]
     private TaxRate(decimal percent)
     {
         Percent = percent;
