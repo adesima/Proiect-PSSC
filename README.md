@@ -64,7 +64,7 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
   - UnvalidatedShipment: Cererea de livrare brută, venită după plata facturii.
   - ValidatedShipment: Adresa de livrare e validă, există curier disponibil pentru zona respectivă.
   - CalculatedShipment: AWB-ul a fost generat, costul de transport calculat.
-  - ShippedShipment: Curierul a preluat pachetul (stare finală pentru acest workflow).
+  - ManifestedShipment: Curierul a preluat pachetul (stare finală pentru acest workflow).
 
 ### Operations
 Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în alta.
