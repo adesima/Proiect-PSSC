@@ -41,8 +41,9 @@ Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta val
   - TaxRate: procent TVA (ex: 19%).
 
 - Context Livrare:
-  - 1
-  - 2
+  - AwbCode: Format specific curierului (ex: AWB-RO-123456).
+  - PackageWeight: Greutate în kg, strict pozitivă.
+  - ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat)
    
 ### Entity States (Exemplu pentru Workflow-ul "Preluare Comandă")
 Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța verificarea lor la compilare.
@@ -60,8 +61,10 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
   - PaidInvoice: Factură pentru care plata a fost confirmată și poate declanșa workflow-ul de livrare, similar cu PaidOrder.
 
 - Context Livrare:
-  - 1
-  - 2
+  - UnvalidatedShipment: Cererea de livrare brută, venită după plata facturii.
+  - ValidatedShipment: Adresa de livrare e validă, există curier disponibil pentru zona respectivă.
+  - CalculatedShipment: AWB-ul a fost generat, costul de transport calculat.
+  - ShippedShipment: Curierul a preluat pachetul (stare finală pentru acest workflow).
 
 ### Operations
 Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în alta.
@@ -79,8 +82,10 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - MarkInvoiceAsPaid: CalculatedInvoice -> PaidInvoice (Actualizează starea facturii la plătită pe baza confirmării de plată).
 
 - Context Livrare:
-  - 1
-  - 2
+  - ValidateDeliveryAddress: UnvalidatedShipment -> Result<ValidatedShipment> (Verifică dacă adresa e în aria de acoperire).
+  - CalculateShippingCost: ValidatedShipment -> Result<CalculatedShipment> (Calculează cost pe baza greutății/distanței).
+  - GenerateAwb: CalculatedShipment -> ManifestedShipment (Alocă un cod unic AWB).
+  - HandOverToCourier: ManifestedShipment -> ShippedShipment (Marchează plecarea din depozit).
 
 ### Workflow
 - PlaceOrderWorkflow: Acest workflow orchestrează procesul de cumpărare:
@@ -97,7 +102,12 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - Rulează CalculateInvoiceTotals → CalculatedInvoice.
   - La confirmarea plății, marchează factura ca PaidInvoice și publică evenimentul InvoicePaidEvent pentru Shipping.
     
-- workflow 3
+- ShippingWokflow
+  - Primește evenimentul InvoicePaidEvent (sau OrderPlaced dacă plata e ramburs).
+  - Creează UnvalidatedShipment.
+  - Validează adresa și disponibilitatea curierului.
+  - Calculează costul transportului și generează AWB.
+  - Publică evenimentul ShippingAWBGenerated (sau PackageShipped).
   
 ## Rulare
 ```bash
