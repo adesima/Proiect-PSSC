@@ -1,6 +1,8 @@
 ﻿using System;
 using Domain.Shipping.Models;
 
+// clasa de baza operartii
+
 namespace Domain.Shipping.Operations
 {
     // Transformam UnvalidatedShipment -> ValidatedShipment

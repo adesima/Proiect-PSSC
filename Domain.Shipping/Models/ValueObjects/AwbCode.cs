@@ -19,8 +19,7 @@ namespace Domain.Shipping.Models
                 throw new ArgumentException("AWB code cannot be empty.", nameof(value));
             }
             
-            // Putem adăuga validări de format (ex: să înceapă cu "AWB")
-            // if (!value.StartsWith("AWB")) throw ...
+            // Validari ...
 
             return new AwbCode(value);
         }

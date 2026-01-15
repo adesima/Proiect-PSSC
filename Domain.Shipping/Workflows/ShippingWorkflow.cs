@@ -27,5 +27,7 @@ namespace Domain.Shipping.Workflows
 
             return manifestedShipment;
         }
+        
+        // event
     }
 }
