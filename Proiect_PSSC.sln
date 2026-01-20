@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Billing.Data", "Billing.Dat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Billing.Api", "Billing.Api\Billing.Api.csproj", "{1143B72A-ECC4-4413-A588-EF21BE52C43E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shipping.Data", "Shipping.Data\Shipping.Data.csproj", "{51890D03-27DB-4677-80EA-C21F8E4E20AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shipping.Api", "Shipping.Api\Shipping.Api.csproj", "{1124B559-321C-4202-8F6C-41F7B0370ED4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,7 @@ Global
 		{E7C7E083-1B03-4FA0-8EEC-7D92376F3438}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7C7E083-1B03-4FA0-8EEC-7D92376F3438}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7C7E083-1B03-4FA0-8EEC-7D92376F3438}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{47358831-9CDB-470F-8B11-CCB6E8051FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47358831-9CDB-470F-8B11-CCB6E8051FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47358831-9CDB-470F-8B11-CCB6E8051FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,5 +50,15 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CCF02AFA-F7B2-4ED9-BACD-0CAC3C65954E}
+=======
+		{51890D03-27DB-4677-80EA-C21F8E4E20AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51890D03-27DB-4677-80EA-C21F8E4E20AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51890D03-27DB-4677-80EA-C21F8E4E20AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51890D03-27DB-4677-80EA-C21F8E4E20AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1124B559-321C-4202-8F6C-41F7B0370ED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1124B559-321C-4202-8F6C-41F7B0370ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1124B559-321C-4202-8F6C-41F7B0370ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1124B559-321C-4202-8F6C-41F7B0370ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> main
 	EndGlobalSection
 EndGlobal

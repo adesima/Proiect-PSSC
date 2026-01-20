@@ -1,0 +1,21 @@
+Value objects
+- ce inseamna un AWB (string cu format specific)
+- greutatea pachetului (nu poate fi neagtiva)
+- adresa de livrare (o iau de la vanzare)
+
+Starile 
+- ComandaSolicitata: am primit cerera
+- ComandaPregatita: am generat AWB-ul 
+- ComandaExpediata: am trimis pachetul catre curier
+
+Operatiile - transforma o stare in alta
+- validare: verific daca adresa e completa
+- calcul: calculez costul transportului (in functie de greutate si distanta)
+- generareAWB: generez un AWB pentru comanda
+
+Asamblare workflow
+- ascult: astept un mesaj de la Billing
+- procesez: iau datele, validez adresa, generez awb
+- salvez: scriu in baza de date "expedierea X a fost creata"
+- public: trimit un mesaj in sistem, ca sa stie si ceilalti ca am terminat
+
