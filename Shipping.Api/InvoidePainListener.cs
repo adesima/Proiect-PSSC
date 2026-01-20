@@ -8,12 +8,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Shipping.Api.Messaging;
 
-namespace Shipping.Api;
+namespace Shipping.Api.BackgroundServices;
 
 public class InvoicePaidListener : BackgroundService
 {
     private readonly ServiceBusProcessor _processor;
-    private readonly ServiceBusSender _shippingSender;
+    // private readonly ServiceBusSender _shippingSender;
     private readonly IServiceProvider _serviceProvider;
 
     public InvoicePaidListener(
@@ -37,8 +37,8 @@ public class InvoicePaidListener : BackgroundService
 
         // 2. CONFIGURARE PRODUCĂTOR (Output)
         // Trimitem mesajul final către un topic nou (ex: "sbt-shipping-manifests")
-        var shippingTopic = config["ServiceBus:ShippingTopic"];
-        _shippingSender = client.CreateSender(shippingTopic);
+        // var shippingTopic = config["ServiceBus:ShippingTopic"];
+        // _shippingSender = client.CreateSender(shippingTopic);
     }
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -90,19 +90,19 @@ public class InvoicePaidListener : BackgroundService
                 await repository.SaveAsync(manifestedEvent);
 
                 // 4. Pregătim Mesajul de Ieșire (ShipmentManifestedMessage)
-                var outputMessage = new ShipmentManifestedMessage(
-                    OrderId: manifestedEvent.OrderId,
-                    CustomerId: manifestedEvent.CustomerId,
-                    Awb: manifestedEvent.Awb,
-                    ShippingAddress: manifestedEvent.ShippingAddress,
-                    Lines: manifestedEvent.Lines,
-                    ShippingCost: manifestedEvent.ShippingCost, // Aici e decimal sau Money.Amount
-                    DispatchedAt: manifestedEvent.ManifestedAt
-                );
+                // var outputMessage = new ShipmentManifestedMessage(
+                //     OrderId: manifestedEvent.OrderId,
+                //     CustomerId: manifestedEvent.CustomerId,
+                //     Awb: manifestedEvent.Awb,
+                //     ShippingAddress: manifestedEvent.ShippingAddress,
+                //     Lines: manifestedEvent.Lines,
+                //     ShippingCost: manifestedEvent.ShippingCost, // Aici e decimal sau Money.Amount
+                //     DispatchedAt: manifestedEvent.ManifestedAt
+                // );
 
                 // 5. Trimitem notificarea în lume
-                var body = BinaryData.FromObjectAsJson(outputMessage);
-                await _shippingSender.SendMessageAsync(new ServiceBusMessage(body));
+                // var body = BinaryData.FromObjectAsJson(outputMessage);
+                // await _shippingSender.SendMessageAsync(new ServiceBusMessage(body));
 
                 // 6. Confirmăm succesul (Șterge mesajul din coadă)
                 await args.CompleteMessageAsync(args.Message);
@@ -113,6 +113,10 @@ public class InvoicePaidListener : BackgroundService
                 // Opțional: Putem trimite la DeadLetter dacă e eroare permanentă
                 // await args.DeadLetterMessageAsync(args.Message, "ProcessingError", ex.Message);
                 // Sau lăsăm să se reîncerce automat (nu dăm Complete)
+                await args.DeadLetterMessageAsync(
+                    args.Message, 
+                    "ProcessingError", 
+                    ex.Message);
             }
         }
     }
@@ -121,7 +125,7 @@ public class InvoicePaidListener : BackgroundService
     {
         await _processor.StopProcessingAsync(cancellationToken);
         await _processor.DisposeAsync();
-        await _shippingSender.DisposeAsync();
+        // await _shippingSender.DisposeAsync();
         await base.StopAsync(cancellationToken);
     }
 }

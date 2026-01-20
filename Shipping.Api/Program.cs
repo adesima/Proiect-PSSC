@@ -104,6 +104,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Azure.Messaging.ServiceBus;
 using Shipping.Api;
+using Shipping.Api.BackgroundServices;
+
 // using Shipping.Api.BackgroundServices; // Aici ar trebui să fie InvoicePaidListener
 
 var builder = WebApplication.CreateBuilder(args);

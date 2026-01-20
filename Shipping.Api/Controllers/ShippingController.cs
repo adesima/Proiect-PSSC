@@ -182,9 +182,12 @@ namespace Shipping.Api.Controllers
 
         // Căutare după AWB (string), nu după Guid
         [HttpGet("{awb}")]
-        public async Task<IActionResult> GetByAwb(AwbCode awb)
+        public async Task<IActionResult> GetByAwb(string awb)
         {
-            var shipment = await _repository.GetByAwbAsync(awb);
+            var awbCode = new AwbCode(awb);
+            
+            var shipment = await _repository.GetByAwbAsync(awbCode);
+            
             if (shipment is null)
                 return NotFound();
 
