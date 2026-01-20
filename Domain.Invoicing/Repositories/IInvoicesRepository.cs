@@ -9,6 +9,6 @@ namespace Domain.Invoicing.Repositories
         Task<PaidInvoice?> GetByIdAsync(Guid invoiceId);
 
         // Saves a paid invoice to the repository
-        Task SaveAsync(PaidInvoice invoice);
+        Task SaveAsync(IInvoicePaidEvent invoice);
     }
 }

@@ -43,7 +43,7 @@ namespace Billing.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> PayInvoice([FromBody] PayInvoiceInput input)
         {
-            var billingAddress = BillingAddress.Create(input.Street, input.City, input.PostalCode);
+            var billingAddress = BillingAddress.Create(input.County, input.City, input.Street, input.PostalCode);
 
             var unitPrice = Money.Create(input.UnitPrice, input.Currency);
 
@@ -75,7 +75,7 @@ namespace Billing.Api.Controllers
                 PaidAt: DateTime.UtcNow
             );
 
-            var paid = _workflow.Execute(command, payment);
+            IInvoicePaidEvent paid = _workflow.Execute(command, payment);
             await _repository.SaveAsync(paid);
 
             return Ok(new

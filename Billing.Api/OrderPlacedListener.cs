@@ -61,7 +61,9 @@ public class OrderPlacedListener : BackgroundService
             OrderId = order.OrderId,
             CustomerId = order.CustomerId,
             BillingAddress = order.BillingAddress,
-            Lines = order.Lines
+            Lines = order.Lines,
+            OrderAmount = order.Amount,
+            PlacedDate = order.PlacedDate
         };
 
         // 2. subtotal + TVA (19%)
@@ -81,18 +83,21 @@ public class OrderPlacedListener : BackgroundService
             Amount: totalWithVat,
             PaidAt: DateTime.UtcNow);
 
-        // 3. save PaidInvoice
-        var paid = _workflow.Execute(command, payment);
-        await _repository.SaveAsync(paid);
+        IInvoicePaidEvent paidEvent = _workflow.Execute(command, payment);
+        await _repository.SaveAsync(paidEvent);
 
-        // 4. Send InvoicePaidMessage
-        var paidEvent = new InvoicePaidMessage(
-            InvoiceId: paid.InvoiceId,
-            OrderId: paid.OrderId,
-            Amount: paid.Total,
-            PaidAt: paid.PaidAt);
+        var paidMessage = new InvoicePaidMessage(
+            OrderId: paidEvent.OrderId,
+            CustomerId: command.CustomerId,
+            InvoiceId: paidEvent.InvoiceId,
+            ShippingAddress: command.BillingAddress, 
+            Lines: command.Lines,
+            Amount: command.OrderAmount,             // from Sales
+            PlacedDate: command.PlacedDate,          // from Sales
+            TotalAmount: paidEvent.Total,            // from Billing
+            PaidAt: paidEvent.PaidAt);
 
-        var body = BinaryData.FromObjectAsJson(paidEvent);
+        var body = BinaryData.FromObjectAsJson(paidMessage);
         await _paymentsSender.SendMessageAsync(new ServiceBusMessage(body));
 
         await args.CompleteMessageAsync(args.Message);

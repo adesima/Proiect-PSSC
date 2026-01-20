@@ -13,4 +13,15 @@ public record PaidInvoice
     public required Money Total { get; init; }
 
     public DateTime PaidAt { get; init; }
+
+    public IInvoicePaidEvent ToEvent() =>
+         new InvoicePaidEvent(
+             InvoiceId: InvoiceId,
+             OrderId: OrderId,
+             CustomerId: CustomerId,
+             BillingAddress: BillingAddress,
+             Subtotal: Subtotal,
+             Tax: Tax,
+             Total: Total,
+             PaidAt: PaidAt);
 }

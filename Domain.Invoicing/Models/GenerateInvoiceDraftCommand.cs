@@ -1,9 +1,12 @@
-﻿namespace Domain.Invoicing.Models;
+﻿using Domain.Invoicing.Models;
 
-public record GenerateInvoiceDraftCommand
+public class GenerateInvoiceDraftCommand
 {
-    public Guid OrderId { get; init; }
-    public Guid CustomerId { get; init; }
-    public required BillingAddress BillingAddress { get; init; }
-    public IReadOnlyCollection<OrderLine> Lines { get; init; } = Array.Empty<OrderLine>();
+    public Guid OrderId { get; set; }
+    public Guid CustomerId { get; set; }
+    public BillingAddress BillingAddress { get; set; } = default!;
+    public IReadOnlyCollection<OrderLine> Lines { get; set; } = Array.Empty<OrderLine>();
+
+    public Money OrderAmount { get; set; } = default!;   // from Orders
+    public DateTime PlacedDate { get; set; }             // from Orders
 }

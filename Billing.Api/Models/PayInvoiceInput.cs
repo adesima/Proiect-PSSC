@@ -7,8 +7,9 @@ namespace Billing.Api.Models
         public Guid OrderId { get; set; }
         public Guid CustomerId { get; set; }
 
-        public string Street { get; set; } = string.Empty;
+        public string County { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
+        public string Street { get; set; } = string.Empty;
         public string PostalCode { get; set; } = string.Empty;
 
         public string ProductCode { get; set; } = string.Empty;

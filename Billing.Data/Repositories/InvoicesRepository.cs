@@ -32,8 +32,9 @@ namespace Billing.Data.Repositories
                 OrderId = entity.OrderId,
                 CustomerId = entity.CustomerId,
                 BillingAddress = BillingAddress.Create(
-                    entity.Street,
+                    entity.County,
                     entity.City,
+                    entity.Street,
                     entity.PostalCode),
                 Lines = Array.Empty<OrderLine>(), 
                 Subtotal = Money.Create(entity.SubtotalAmount, currency),
@@ -44,7 +45,7 @@ namespace Billing.Data.Repositories
         }
 
 
-        public async Task SaveAsync(PaidInvoice invoice)
+        public async Task SaveAsync(IInvoicePaidEvent invoice)
         {
             var entity = await dbContext.Invoices
                 .FirstOrDefaultAsync(i => i.InvoiceId == invoice.InvoiceId);
@@ -61,8 +62,9 @@ namespace Billing.Data.Repositories
             entity.OrderId = invoice.OrderId;
             entity.CustomerId = invoice.CustomerId;
 
-            entity.Street = invoice.BillingAddress.Street;
+            entity.County = invoice.BillingAddress.County;
             entity.City = invoice.BillingAddress.City;
+            entity.Street = invoice.BillingAddress.Street;
             entity.PostalCode = invoice.BillingAddress.PostalCode;
 
             entity.SubtotalAmount = invoice.Subtotal.Amount;

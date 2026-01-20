@@ -1,12 +1,11 @@
-﻿using System;
-using Domain.Invoicing.Models;
+﻿using Domain.Invoicing.Models;
 using Domain.Invoicing.Operations;
 
 namespace Domain.Invoicing.Workflows
 {
     public class BillingWorkflow
     {
-        public PaidInvoice Execute(
+        public IInvoicePaidEvent Execute(
             GenerateInvoiceDraftCommand command,
             PaymentConfirmedEvent payment)
         {
@@ -30,7 +29,7 @@ namespace Domain.Invoicing.Workflows
                 new MarkInvoiceAsPaidOperation()
                     .Transform(calculated, payment);
 
-            return paid;
+            return paid.ToEvent();
         }
     }
 }

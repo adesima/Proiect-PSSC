@@ -4,4 +4,7 @@ public record OrderPlacedMessage(
     Guid OrderId,
     Guid CustomerId,
     BillingAddress BillingAddress,
-    List<OrderLine> Lines);
+    IReadOnlyCollection<OrderLine> Lines,
+    Money Amount,            // <-- new
+    DateTime PlacedDate      // optional, if you need it
+);
