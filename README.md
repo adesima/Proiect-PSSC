@@ -16,7 +16,7 @@ Obiectivul principal este modelarea corectă a domeniului folosind principii DDD
 ## Bounded Contexts Identificate
 Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 
-- Ordering Context: Responsabil de preluarea comenzilor, validarea coșului de cumpărături, calculul prețului inițial și gestionarea stocului disponibil.
+- Ordering Context: Responsabil de preluarea comenzilor, validarea datelor de intrare (produs, cantitate, adresă livrare), verificarea disponibilității stocului și calculul valorii totale a comenzii. Output-ul său este evenimentul OrderPlacedEvent care declanșează procesul de facturare.
 
 - Invoicing (Billing) Context: Responsabil de procesarea plăților, generarea facturilor fiscale pe baza comenzilor validate și calculul taxelor (TVA).
 
@@ -29,8 +29,8 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 ### Value Objects
 Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta validitatea datelor la nivelul cel mai jos.
 - Context Vanzari:
-  - ProductCode: Format specific (ex: SKU-12345).
-  - Quantity: Număr întreg strict pozitiv (>0).
+  - ProductCode: Format specific (ex: PROD-12345).
+  - Quantity: Număr întreg strict pozitiv (>0) limitat la un maxim per comanda.
   - Money/Price: Valoare zecimală + Monedă, nu permite valori negative.
   - ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat).
 
@@ -41,8 +41,9 @@ Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta val
   - TaxRate: procent TVA (ex: 19%).
 
 - Context Livrare:
-  - 1
-  - 2
+  - AwbCode: Format specific curierului (ex: AWB-RO-123456).
+  - PackageWeight: Greutate în kg, strict pozitivă.
+  - ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat)
    
 ### Entity States (Exemplu pentru Workflow-ul "Preluare Comandă")
 Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța verificarea lor la compilare.
@@ -51,7 +52,7 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
   - UnvalidatedOrder: Comanda brută primită de la client (poate avea stoc lipsă, adresă invalidă).
   - ValidatedOrder: Comanda a trecut validările, stocul este rezervat.
   - CalculatedOrder: Prețul total (inclusiv discount-uri) a fost aplicat.
-  - PaidOrder: Confirmarea plății a fost primită, gata de expediere.
+  - PlacedOrder: Starea finală în acest context. Comanda este salvată și confirmată, fiind emis un eveniment pentru a notifica Billing Context.
 
 - Context Facturare:
   - UnvalidatedInvoice: Factură inițială derivată dintr-o comandă, care poate avea date fiscale sau adresă de facturare invalide / incomplete.
@@ -60,17 +61,18 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
   - PaidInvoice: Factură pentru care plata a fost confirmată și poate declanșa workflow-ul de livrare, similar cu PaidOrder.
 
 - Context Livrare:
-  - 1
-  - 2
+  - UnvalidatedShipment: Cererea de livrare brută, venită după plata facturii.
+  - ValidatedShipment: Adresa de livrare e validă, există curier disponibil pentru zona respectivă.
+  - CalculatedShipment: AWB-ul a fost generat, costul de transport calculat.
+  - ManifestedShipment: Curierul a preluat pachetul (stare finală pentru acest workflow).
 
 ### Operations
 Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în alta.
 
 - Context Vanzari:
-  - ValidateOrder: UnvalidatedOrder -> Result<ValidatedOrder> (Verifică existența produselor și formatul adresei).
-  - CalculatePrices: ValidatedOrder -> CalculatedOrder (Aplică logica de preț).
-  - ProcessPayment: Comunică cu gateway-ul de plată.
-  - GenerateAwb: Operație specifică contextului de Shipping.
+  - ValidateOrder: UnvalidatedOrder -> Result<ValidatedOrder> (Verifică formatul adresei și disponibilitatea stocului prin interogarea unui Read Model).
+  - CalculatePrices: ValidatedOrder -> CalculatedOrder (Aplică prețurile unitare din catalog și calculează totalul).
+  - PlaceOrder: CalculatedOrder -> PlacedOrder (Finalizează comanda, persistă starea și publică evenimentul OrderPlacedEvent).
 
 - Context Facturare:
   - GenerateInvoiceDraft: UnvalidatedOrder -> Result<UnvalidatedInvoice> (Construiește un draft de factură pe baza comenzii, fără garanții de validitate fiscală).
@@ -79,16 +81,18 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - MarkInvoiceAsPaid: CalculatedInvoice -> PaidInvoice (Actualizează starea facturii la plătită pe baza confirmării de plată).
 
 - Context Livrare:
-  - 1
-  - 2
+  - ValidateDeliveryAddress: UnvalidatedShipment -> Result<ValidatedShipment> (Verifică dacă adresa e în aria de acoperire).
+  - CalculateShippingCost: ValidatedShipment -> Result<CalculatedShipment> (Calculează cost pe baza greutății/distanței).
+  - GenerateAwb: CalculatedShipment -> ManifestedShipment (Alocă un cod unic AWB).
+  - HandOverToCourier: ManifestedShipment -> ShippedShipment (Marchează plecarea din depozit).
 
 ### Workflow
 - PlaceOrderWorkflow: Acest workflow orchestrează procesul de cumpărare:
   - Primește PlaceOrderCommand.
   - Execută ValidateOrder.
-  - Dacă e valid, execută CheckStock.
-  - Execută CalculateFinalAmount.
-  - Salvează starea și publică evenimentul OrderPlacedEvent (pentru a notifica Billing și Shipping).
+  - Dacă e valid, execută CalculatePrices.
+  - Execută PlaceOrder.
+  - Publică evenimentul OrderPlacedEvent pe Service Bus (trigger pentru Billing).
 
 - BillingWorkflow:
   - Primește eveniment OrderPlacedEvent.
@@ -97,7 +101,12 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - Rulează CalculateInvoiceTotals → CalculatedInvoice.
   - La confirmarea plății, marchează factura ca PaidInvoice și publică evenimentul InvoicePaidEvent pentru Shipping.
     
-- workflow 3
+- ShippingWokflow
+  - Primește evenimentul InvoicePaidEvent (sau OrderPlaced dacă plata e ramburs).
+  - Creează UnvalidatedShipment.
+  - Validează adresa și disponibilitatea curierului.
+  - Calculează costul transportului și generează AWB.
+  - Publică evenimentul ShippingAWBGenerated (sau PackageShipped).
   
 ## Rulare
 ```bash
