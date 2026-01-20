@@ -1,93 +1,93 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\",
+  "WorkspaceRootPath": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\iinvoicepaidevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\models\\iinvoicepaidevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\iinvoicepaidevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\repositories\\invoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.data\\repositories\\invoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\repositories\\invoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\models\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\money.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\orderplacedlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\orderplacedlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\orderplacedlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\models\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.data\\models\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\models\\invoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\billingaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\models\\billingaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\billingaddress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\models\\payinvoiceinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\models\\payinvoiceinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\models\\payinvoiceinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\messaging\\invoicepaidmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\messaging\\invoicepaidmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\messaging\\invoicepaidmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\messaging\\orderconfirmedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\messaging\\orderconfirmedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\messaging\\orderconfirmedmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\billingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.data\\billingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\billingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\workflows\\billingworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\workflows\\billingworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\workflows\\billingworkflow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\repositories\\iinvoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\repositories\\iinvoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\repositories\\iinvoicesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\paidinvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\models\\paidinvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\paidinvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\taxrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\models\\taxrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\taxrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\generateinvoicedraftcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\models\\generateinvoicedraftcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\generateinvoicedraftcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\models\\orderplacedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\models\\orderplacedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\models\\orderplacedevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\domain.invoicing\\domain.invoicing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\domain.invoicing\\domain.invoicing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{0A5B80D0-EABD-4E0E-9B4A-0E167F9E581B}|Domain.Invoicing\\Domain.Invoicing.csproj|solutionrelative:domain.invoicing\\domain.invoicing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.api\\billing.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.api\\billing.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{1143B72A-ECC4-4413-A588-EF21BE52C43E}|Billing.Api\\Billing.Api.csproj|solutionrelative:billing.api\\billing.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|d:\\facultate\\iv_i\\pssc\\proiect_git\\proiect-pssc\\billing.data\\billing.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|c:\\users\\simaa\\onedrive\\desktop\\scoala\\facultate\\anul iv\\sem 1\\pssc - proiectarea sistemelor software complexe\\proiect\\proiect_pssc\\billing.data\\billing.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{47358831-9CDB-470F-8B11-CCB6E8051FFC}|Billing.Data\\Billing.Data.csproj|solutionrelative:billing.data\\billing.data.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -98,51 +98,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 8,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GenerateInvoiceDraftCommand.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
-              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
-              "RelativeToolTip": "Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T13:41:16.714Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PaidInvoice.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\PaidInvoice.cs",
-              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\PaidInvoice.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\PaidInvoice.cs",
-              "RelativeToolTip": "Domain.Invoicing\\Models\\PaidInvoice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T12:57:43.839Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IInvoicePaidEvent.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
-              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
-              "RelativeToolTip": "Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowBcAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T12:56:19.449Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "BillingWorkflow.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Workflows\\BillingWorkflow.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Workflows\\BillingWorkflow.cs",
               "RelativeDocumentMoniker": "Domain.Invoicing\\Workflows\\BillingWorkflow.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Workflows\\BillingWorkflow.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Workflows\\BillingWorkflow.cs",
               "RelativeToolTip": "Domain.Invoicing\\Workflows\\BillingWorkflow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -152,9 +116,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "TaxRate.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\TaxRate.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\TaxRate.cs",
               "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\TaxRate.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\TaxRate.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\TaxRate.cs",
               "RelativeToolTip": "Domain.Invoicing\\Models\\TaxRate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -164,9 +128,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Money.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\Money.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\Money.cs",
               "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\Money.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\Money.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\Money.cs",
               "RelativeToolTip": "Domain.Invoicing\\Models\\Money.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -176,9 +140,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "BillingAddress.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\BillingAddress.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\BillingAddress.cs",
               "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\BillingAddress.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\BillingAddress.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\BillingAddress.cs",
               "RelativeToolTip": "Domain.Invoicing\\Models\\BillingAddress.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAkwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -188,9 +152,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "OrderPlacedListener.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\OrderPlacedListener.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\OrderPlacedListener.cs",
               "RelativeDocumentMoniker": "Billing.Api\\OrderPlacedListener.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\OrderPlacedListener.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\OrderPlacedListener.cs",
               "RelativeToolTip": "Billing.Api\\OrderPlacedListener.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAkwF4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -200,9 +164,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "InvoicePaidMessage.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\InvoicePaidMessage.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Messaging\\InvoicePaidMessage.cs",
               "RelativeDocumentMoniker": "Billing.Api\\Messaging\\InvoicePaidMessage.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\InvoicePaidMessage.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Messaging\\InvoicePaidMessage.cs",
               "RelativeToolTip": "Billing.Api\\Messaging\\InvoicePaidMessage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -212,9 +176,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "OrderConfirmedMessage.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
               "RelativeDocumentMoniker": "Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
               "RelativeToolTip": "Billing.Api\\Messaging\\OrderConfirmedMessage.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -224,9 +188,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "OrderPlacedEvent.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
               "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
               "RelativeToolTip": "Domain.Invoicing\\Models\\OrderPlacedEvent.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -234,11 +198,60 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Billing.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\appsettings.json",
+              "RelativeToolTip": "Billing.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-18T20:46:16.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IInvoicePaidEvent.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowBcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T12:56:19.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "PaidInvoice.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\PaidInvoice.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\PaidInvoice.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\PaidInvoice.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Models\\PaidInvoice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T12:57:43.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GenerateInvoiceDraftCommand.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
+              "RelativeDocumentMoniker": "Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
+              "RelativeToolTip": "Domain.Invoicing\\Models\\GenerateInvoiceDraftCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-20T13:41:16.714Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
               "Title": "PayInvoiceInput.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Models\\PayInvoiceInput.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Models\\PayInvoiceInput.cs",
               "RelativeDocumentMoniker": "Billing.Api\\Models\\PayInvoiceInput.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Models\\PayInvoiceInput.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Models\\PayInvoiceInput.cs",
               "RelativeToolTip": "Billing.Api\\Models\\PayInvoiceInput.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwAoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -248,9 +261,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "Billing.Api.csproj",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Billing.Api.csproj",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Billing.Api.csproj",
               "RelativeDocumentMoniker": "Billing.Api\\Billing.Api.csproj",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Billing.Api.csproj",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Billing.Api.csproj",
               "RelativeToolTip": "Billing.Api\\Billing.Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -258,24 +271,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Billing.Api\\appsettings.json",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\appsettings.json",
-              "RelativeToolTip": "Billing.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-18T20:46:16.679Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
               "Title": "InvoicesController.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Controllers\\InvoicesController.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Controllers\\InvoicesController.cs",
               "RelativeDocumentMoniker": "Billing.Api\\Controllers\\InvoicesController.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Controllers\\InvoicesController.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Controllers\\InvoicesController.cs",
               "RelativeToolTip": "Billing.Api\\Controllers\\InvoicesController.cs",
               "ViewState": "AgIAAEUAAAAAAAAAAAAowFEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -285,9 +285,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Program.cs",
               "RelativeDocumentMoniker": "Billing.Api\\Program.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Api\\Program.cs",
               "RelativeToolTip": "Billing.Api\\Program.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -297,9 +297,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "InvoicesRepository.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Repositories\\InvoicesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\Repositories\\InvoicesRepository.cs",
               "RelativeDocumentMoniker": "Billing.Data\\Repositories\\InvoicesRepository.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Repositories\\InvoicesRepository.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\Repositories\\InvoicesRepository.cs",
               "RelativeToolTip": "Billing.Data\\Repositories\\InvoicesRepository.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -309,9 +309,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "InvoiceDto.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Models\\InvoiceDto.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\Models\\InvoiceDto.cs",
               "RelativeDocumentMoniker": "Billing.Data\\Models\\InvoiceDto.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Models\\InvoiceDto.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\Models\\InvoiceDto.cs",
               "RelativeToolTip": "Billing.Data\\Models\\InvoiceDto.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAzwAkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -321,9 +321,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "Billing.Data.csproj",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Billing.Data.csproj",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\Billing.Data.csproj",
               "RelativeDocumentMoniker": "Billing.Data\\Billing.Data.csproj",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\Billing.Data.csproj",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\Billing.Data.csproj",
               "RelativeToolTip": "Billing.Data\\Billing.Data.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -333,9 +333,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "BillingContext.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\BillingContext.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\BillingContext.cs",
               "RelativeDocumentMoniker": "Billing.Data\\BillingContext.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Data\\BillingContext.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Billing.Data\\BillingContext.cs",
               "RelativeToolTip": "Billing.Data\\BillingContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -345,9 +345,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "IInvoicesRepository.cs",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
               "RelativeDocumentMoniker": "Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
               "RelativeToolTip": "Domain.Invoicing\\Repositories\\IInvoicesRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -357,9 +357,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "Domain.Invoicing.csproj",
-              "DocumentMoniker": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Domain.Invoicing.csproj",
+              "DocumentMoniker": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Domain.Invoicing.csproj",
               "RelativeDocumentMoniker": "Domain.Invoicing\\Domain.Invoicing.csproj",
-              "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Domain.Invoicing\\Domain.Invoicing.csproj",
+              "ToolTip": "C:\\Users\\simaa\\OneDrive\\Desktop\\Scoala\\Facultate\\Anul IV\\Sem 1\\PSSC - Proiectarea Sistemelor Software Complexe\\Proiect\\Proiect_PSSC\\Domain.Invoicing\\Domain.Invoicing.csproj",
               "RelativeToolTip": "Domain.Invoicing\\Domain.Invoicing.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",

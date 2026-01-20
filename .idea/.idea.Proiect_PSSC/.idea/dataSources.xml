@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-<<<<<<< HEAD
-    <data-source source="LOCAL" name="pssc-sql@psscadmin.database.windows.net" uuid="edf4d505-33b6-45ab-ad06-1d1190b84f6b">
-=======
-    <data-source source="LOCAL" name="pssc-sql@psscadmin.database.windows.net" uuid="48b08ba4-fa74-4a90-8ea9-940b95d62544">
->>>>>>> main
+    <data-source source="LOCAL" name="pssc-sql@psscadmin.database.windows.net" uuid="94336472-a6f6-4c64-9e1a-d6f93ce4a57c">
       <driver-ref>azure.ms</driver-ref>
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>
       <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-<<<<<<< HEAD
-      <jdbc-url>jdbc:sqlserver://psscadmin.database.windows.net:1433;database=pssc-sql;user=psscadmin@psscadmin;password={parolasql1!};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;</jdbc-url>
-=======
       <jdbc-url>jdbc:sqlserver://psscadmin.database.windows.net:1433;database=pssc-sql;user=psscadmin@psscadmin;password=parolasql1!;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;</jdbc-url>
->>>>>>> main
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

@@ -134,8 +134,7 @@
               "RelativeToolTip": "Domain.Invoicing\\Models\\IInvoicePaidEvent.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAowBcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T12:56:19.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-20T12:56:19.449Z"
             },
             {
               "$type": "Document",
@@ -265,7 +264,7 @@
               "RelativeDocumentMoniker": "Billing.Api\\appsettings.json",
               "ToolTip": "D:\\Facultate\\IV_I\\PSSC\\Proiect_git\\Proiect-PSSC\\Billing.Api\\appsettings.json",
               "RelativeToolTip": "Billing.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-12-18T20:46:16.679Z",
               "EditorCaption": ""
@@ -304,8 +303,7 @@
               "RelativeToolTip": "Billing.Data\\Repositories\\InvoicesRepository.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T19:48:37.36Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-18T19:48:37.36Z"
             },
             {
               "$type": "Document",
