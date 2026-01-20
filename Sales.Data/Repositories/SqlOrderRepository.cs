@@ -15,16 +15,16 @@ namespace Sales.Data.Repositories
 
         public async Task SaveOrderAsync(PlacedOrder order)
         {
-            // 1. Mapăm din Domain Model (PlacedOrder) -> Entity Model (Tabela Orders)
             var orderEntity = new Models.OrderDto
             {
                 OrderId = order.OrderId,
-                ClientId = order.ClientId, // Acum avem coloana asta în baza de date!
+                ClientId = order.ClientId, 
                 TotalAmount = order.TotalAmount,
-                Currency = "RON", // Sau order.Currency dacă ai această proprietate
+                Currency = "RON", 
                 PlacedDate = order.PlacedDate,
 
                 // Mapăm Adresa (Value Object -> Coloane simple)
+                ShippingCounty = order.ShippingAddress.County,
                 ShippingCity = order.ShippingAddress.City,
                 ShippingStreet = order.ShippingAddress.Street,
                 ShippingPostalCode = order.ShippingAddress.PostalCode
@@ -44,7 +44,6 @@ namespace Sales.Data.Repositories
                 });
             }
 
-            // 3. Salvăm totul în baza de date (EF Core se ocupă de tranzacție)
             _dbContext.Orders.Add(orderEntity);
             await _dbContext.SaveChangesAsync();
         }

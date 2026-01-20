@@ -29,7 +29,7 @@ namespace Sales.Api.Controllers
             var command = new UnvalidatedOrder(new UnvalidatedOrderBody(
                 request.ClientId, 
                 request.Lines.Select(l => new UnvalidatedOrderLine(l.ProductCode, l.Quantity)).ToList(),
-                new UnvalidatedAddress(request.ShippingAddress.City, request.ShippingAddress.Street, request.ShippingAddress.PostalCode)
+                new UnvalidatedAddress(request.ShippingAddress.County, request.ShippingAddress.City, request.ShippingAddress.Street, request.ShippingAddress.PostalCode)
             ));
 
             IOrder result = await _placeOrderWorkflow.ExecuteAsync(command);

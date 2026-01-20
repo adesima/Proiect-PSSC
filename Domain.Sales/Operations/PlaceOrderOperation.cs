@@ -39,6 +39,7 @@ namespace Domain.Sales.Operations
             }
             
             var finalAddress = new Address(
+                calculatedOrder.ShippingAddress.County,
                 calculatedOrder.ShippingAddress.City,
                 calculatedOrder.ShippingAddress.Street,
                 calculatedOrder.ShippingAddress.PostalCode
@@ -61,7 +62,11 @@ namespace Domain.Sales.Operations
             {
                 OrderId = placedOrder.OrderId,
                 CustomerId = placedOrder.ClientId,
-                TotalAmount = placedOrder.TotalAmount,
+                Amount = new MoneyEvent 
+                { 
+                    Amount = placedOrder.TotalAmount, 
+                    Currency = "RON" 
+                },
                 PlacedDate = placedOrder.PlacedDate,
                 Lines = placedOrder.Lines.Select(l => new OrderLineEvent { 
                     ProductCode = l.Product.Value, 
@@ -69,6 +74,7 @@ namespace Domain.Sales.Operations
                     UnitPrice = new MoneyEvent { Amount = l.Price, Currency = "RON" } 
                 }).ToList(),
                 BillingAddress = new AddressEvent { 
+                    County = placedOrder.ShippingAddress.County,
                     City = placedOrder.ShippingAddress.City, 
                     Street = placedOrder.ShippingAddress.Street,
                     PostalCode = placedOrder.ShippingAddress.PostalCode 

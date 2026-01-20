@@ -18,5 +18,5 @@ namespace Domain.Sales.Models.Orders
     
     public record UnvalidatedOrderLine(string ProductCode, int Quantity);
     
-    public record UnvalidatedAddress(string City, string Street, string PostalCode);
+    public record UnvalidatedAddress(string County,string City, string Street, string PostalCode);
 }

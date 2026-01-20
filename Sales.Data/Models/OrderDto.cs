@@ -11,6 +11,7 @@ namespace Sales.Data.Models
         public decimal TotalAmount { get; set; }
         public string Currency { get; set; }
         
+        public string ShippingCounty { get; set; }
         public string ShippingCity { get; set; }
         public string ShippingStreet { get; set; }
         public string ShippingPostalCode { get; set; }

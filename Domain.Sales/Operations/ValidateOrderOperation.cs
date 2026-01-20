@@ -36,7 +36,8 @@ namespace Domain.Sales.Operations
             try 
             {
                 // Recreăm adresa (validare format)
-                var address = new ShippingAddress(
+                var address = new Address(
+                    unvalidatedOrder.Body.ShippingAddress.County,
                     unvalidatedOrder.Body.ShippingAddress.City, 
                     unvalidatedOrder.Body.ShippingAddress.Street, 
                     unvalidatedOrder.Body.ShippingAddress.PostalCode);
@@ -48,7 +49,7 @@ namespace Domain.Sales.Operations
 
                     var quantity = new Quantity(line.Quantity); // Valideaza cantitate > 0
 
-                    // Verificari DB (prin functiile injectate)
+                    // Verificari DB 
                     if (!await _checkProductExists(productCode))
                         return new InvalidOrder($"Produsul {productCode} nu exista.");
 
