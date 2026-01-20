@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/Domain.Shipping/Models/IShipmentManifestedEvent.cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/Domain.Shipping/Models/IShipmentManifestedEvent.cs" />
+              <option name="originalContent" value="namespace Domain.Shipping.Models;&#10;&#10;public interface IShipmentManifestedEvent&#10;{&#10;    Guid OrderId { get; }&#10;    Guid CustomerId { get; }&#10;    ShippingAddress ShippingAddress { get; init; }&#10;    &#10;    // Costul calculat al transportului&#10;    Money ShippingCost { get; }&#10;    &#10;    // Codul AWB generat (rezultatul principal al muncii tale)&#10;    AwbCode Awb { get; }&#10;    &#10;    &#10;    &#10;    // Data și ora la care s-a generat AWB-ul&#10;    DateTime ManifestedAt { get; }&#10;}&#10;&#10;public record ShipmentManifestedEvent(&#10;    Guid OrderId,&#10;    Guid CustomerId,&#10;    ShippingAddress ShippingAddress,&#10;    Money ShippingCost,&#10;    AwbCode Awb,&#10;    DateTime ManifestedAt&#10;) : IShipmentManifestedEvent;&#10;" />
+              <option name="updatedContent" value="namespace Domain.Shipping.Models;&#10;&#10;public interface IShipmentManifestedEvent&#10;{&#10;    Guid OrderId { get; }&#10;    Guid CustomerId { get; }&#10;    ShippingAddress ShippingAddress { get; init; }&#10;    &#10;    // Lista de linii ale expedierii (ProductCode + Quantity)&#10;    IReadOnlyCollection&lt;ShipmentLine&gt; Lines { get; }&#10;    &#10;    // Costul calculat al transportului&#10;    Money ShippingCost { get; }&#10;    &#10;    // Codul AWB generat (rezultatul principal al muncii tale)&#10;    AwbCode Awb { get; }&#10;    &#10;    &#10;    &#10;    // Data și ora la care s-a generat AWB-ul&#10;    DateTime ManifestedAt { get; }&#10;}&#10;&#10;public record ShipmentManifestedEvent(&#10;    Guid OrderId,&#10;    Guid CustomerId,&#10;    ShippingAddress ShippingAddress,&#10;    IReadOnlyCollection&lt;ShipmentLine&gt; Lines,&#10;    Money ShippingCost,&#10;    AwbCode Awb,&#10;    DateTime ManifestedAt&#10;) : IShipmentManifestedEvent;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
