@@ -10,4 +10,10 @@
       <ProjectReference Include="..\Domain.Shipping\Domain.Shipping.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFramework.SqlServer" Version="9.0.12" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.12" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.12" />
+    </ItemGroup>
+
 </Project>

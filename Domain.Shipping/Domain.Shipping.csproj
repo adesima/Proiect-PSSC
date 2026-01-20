@@ -10,8 +10,8 @@
       <Folder Include="Exceptions\" />
     </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.0" />
-    </ItemGroup>
+<!--    <ItemGroup>-->
+<!--      <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.0" />-->
+<!--    </ItemGroup>-->
 
 </Project>

@@ -13,10 +13,10 @@ namespace Shipping.ConsoleApp
 
             // 1. Creăm datele de intrare (Simulăm o comandă venită de la Billing)
             var address = ShippingAddress.Create(
-                street: "Bulevardul Timisoara 26",
-                city: "Bucuresti",
-                postalCode: "061331",
-                county: "Sector 6"
+                street: "Bulevardul Eroilor de la Tisa",
+                city: "Timisoara",
+                postalCode: "300575",
+                county: "Timis"
             );
 
             var unvalidatedShipment = new UnvalidatedShipment
@@ -26,7 +26,7 @@ namespace Shipping.ConsoleApp
                 DeliveryAddress = address,
                 Lines = new List<ShipmentLine>
                 {
-                    new ShipmentLine("IPHONE-15", 1),    // 1 telefon
+                    new ShipmentLine("SAMSUNG-GALAXY-S26", 1),    // 1 telefon
                     new ShipmentLine("CASE-SILICONE", 2) // 2 huse
                 }
             };
@@ -38,6 +38,8 @@ namespace Shipping.ConsoleApp
             try
             {
                 Console.WriteLine("Processing shipment...");
+                Console.WriteLine("\nPress any key to continue...\n");
+                Console.ReadKey();
                 
                 // Aici se întâmplă magia: Validare -> Calcul -> Generare AWB
                 var result = workflow.Execute(unvalidatedShipment);
