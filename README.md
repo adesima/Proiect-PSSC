@@ -92,7 +92,7 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - Execută ValidateOrderOperation (returnează ValidatedOrder sau InvalidOrder).
   - Dacă rezultatul e valid, execută CalculatePricesOperation (returnează CalculatedOrder).
   - Execută PlaceOrderOperation (salvează comanda în DB și returnează PlacedOrder).
-  - Ca efect secundar (Side Effect) al ultimei operații, publică mesajul de integrare OrderConfirmedMessage pe topicul orders-confirmed din Azure Service Bus.
+  - Ca efect al ultimei operații, publică mesajul de integrare OrderConfirmedMessage pe topicul orders-confirmed din Azure Service Bus.
 
 - BillingWorkflow:
   - Primește un GenerateInvoiceDraftCommand construit din OrderPlacedEvent, împreună cu PaymentConfirmedEvent.
