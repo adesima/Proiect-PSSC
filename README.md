@@ -18,8 +18,8 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 
 - Ordering Context: Responsabil de preluarea comenzilor, validarea datelor de intrare (produs, cantitate, adresă livrare), verificarea disponibilității stocului și calculul valorii totale a comenzii. Output-ul său este evenimentul OrderPlacedEvent care declanșează procesul de facturare.
 
-- Invoicing (Billing) Context: Responsabil de procesarea plăților, generarea facturilor fiscale pe baza comenzilor validate și calculul taxelor (TVA).
-
+- Invoicing (Billing) Context: Responsabil de primirea comenzilor deja validate (OrderPlacedEvent), calcularea sumelor financiare (TVA, total) pe baza liniilor de comandă și transformarea lor într‑o factură fiscală completă (PaidInvoice). De asemenea, se ocupă de generarea și publicarea evenimentului InvoicePaidEvent către celălalt context (Shipping), precum și de încărcarea facturilor în baza de date.
+  
 - Shipping Context: Responsabil de generarea AWB-urilor, calculul costului de transport si finalizarea livrarii.
 
 ## Event Storming Results
@@ -35,8 +35,7 @@ Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta val
   - Address: Structură imutabilă ce grupează datele de livrare (Oraș, Județ, Stradă), validată la creare.
 
 - Context Facturare:
-  - InvoiceNumber: cod unic al facturii. 
-  - BillingAddress: adresa de facturare (stradă, oraș, cod poștal validat).
+  - BillingAddress: Obiect imutabil care grupează toate câmpurile de adresă de facturare (județ, oraș, stradă, cod poștal).
   - Money/Price: Valoare zecimală + Monedă, nu permite valori negative.
   - TaxRate: procent TVA (ex: 19%).
 
@@ -56,10 +55,10 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
   - InvalidOrder: Stare rezultată în cazul eșuării oricărei validări anterioare, conținând lista motivelor de eroare (fără a arunca excepții în flow).
 
 - Context Facturare:
-  - UnvalidatedInvoice: Factură inițială derivată dintr-o comandă, care poate avea date fiscale sau adresă de facturare invalide / incomplete.
-  - ValidatedInvoice: Factură pentru care au fost verificate datele clientului, adresa de facturare și cotele de TVA, gata pentru calculul sumelor.
-  - CalculatedInvoice: Factură cu subtotal, TVA și total final calculat, pregătită de emis către client.
-  - PaidInvoice: Factură pentru care plata a fost confirmată și poate declanșa workflow-ul de livrare, similar cu PaidOrder.
+  - UnvalidatedInvoice: Reprezintă proiectul brut de factură obținut direct din comandă; poate conține date lipsă sau invalide (adresă, prețuri, cantități) și nu este încă pregătit pentru emitere.
+  - ValidatedInvoice: Stare în care toate datele au fost verificate și convertite în Value Objects (BillingAddress, Money, TaxRate); factura este coerentă din punct de vedere fiscal și poate intra în etapa de calcul.
+  - CalculatedInvoice: Factură pentru care s-au calculat corect subtotalul, TVA și totalul final pe baza liniilor de comandă și a cotei de TVA; este pregătită pentru a fi emisă clientului sau trimisă spre plată.
+  - PaidInvoice: Starea finală în contextul de facturare, în care plata a fost confirmată pentru factura respectivă; la acest punct se poate publica evenimentul InvoicePaidEvent și se pot declanșa fluxuri din alte contexte (ex. livrare).
 
 - Context Livrare:
   - UnvalidatedShipment: Cererea de livrare brută, venită după plata facturii.
@@ -76,10 +75,10 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - PlaceOrderOperation: CalculatedOrder → IOrder (Persistă comanda în SQL Server folosind IOrderRepository, decrementează stocul și publică mesajul asincron OrderConfirmedMessage). Returnează PlacedOrder.
 
 - Context Facturare:
-  - GenerateInvoiceDraft: UnvalidatedOrder -> Result<UnvalidatedInvoice> (Construiește un draft de factură pe baza comenzii, fără garanții de validitate fiscală).
-  - ValidateInvoice: UnvalidatedInvoice -> Result<ValidatedInvoice> (Verifică datele clientului, adresa de facturare și regulile de TVA).
-  - CalculateInvoiceTotals: ValidatedInvoice -> CalculatedInvoice (Calculează subtotalul, TVA și totalul de plată).
-  - MarkInvoiceAsPaid: CalculatedInvoice -> PaidInvoice (Actualizează starea facturii la plătită pe baza confirmării de plată).
+  - GenerateInvoiceDraftOperation: GenerateInvoiceDraftCommand → UnvalidatedInvoice (Primește datele venite din contextul de vânzări: OrderId, CustomerId, BillingAddress, Lines, Amount, PlacedDate și le proiectează într-un obiect de domeniu UnvalidatedInvoice, fără să facă încă validări complexe; practic traduce DTO-ul extern în model intern de facturare.)
+  - ValidateInvoiceOperation: UnvalidatedInvoice → ValidatedInvoice (Verifică integritatea datelor de facturare: validează BillingAddress, convertește prețurile și cantitățile în Money și alte value object‑uri, și se asigură că structura facturii respectă regulile domeniului; rezultatul este un ValidatedInvoice gata pentru calculul sumelor.)
+  - CalculateInvoiceTotalsOperation: ValidatedInvoice → CalculatedInvoice (Parcurge liniile facturii aplică TaxRate pentru a obține TVA și construiește totalul de plată ca Money; rezultatul este CalculatedInvoice, care conține toate valorile financiare necesare emiterii facturii.)
+  - MarkInvoiceAsPaidOperation: CalculatedInvoice + PaymentConfirmedEvent → PaidInvoice (Combină factura calculată cu evenimentul de plată confirmată: sumă plătită, momentul plății; și produce PaidInvoice, starea finală în care factura este marcată ca plătită și din care se generează evenimentul InvoicePaidEvent ce va fi trimis către contextul Livrare.
 
 - Context Livrare:
   - ProcessShipmentOperation: command -> UnvalidatedShipment 
@@ -96,11 +95,11 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - Ca efect secundar (Side Effect) al ultimei operații, publică mesajul de integrare OrderConfirmedMessage pe topicul orders-confirmed din Azure Service Bus.
 
 - BillingWorkflow:
-  - Primește eveniment OrderPlacedEvent.
-  - Creează UnvalidatedInvoice din comandă.
-  - Rulează ValidateInvoice → ValidatedInvoice.
-  - Rulează CalculateInvoiceTotals → CalculatedInvoice.
-  - La confirmarea plății, marchează factura ca PaidInvoice și publică evenimentul InvoicePaidEvent pentru Shipping.
+  - Primește un GenerateInvoiceDraftCommand construit din OrderPlacedEvent, împreună cu PaymentConfirmedEvent.
+  - Execută GenerateInvoiceDraftOperation pentru a crea UnvalidatedInvoice, adică draftul brut de factură.
+  - Rulează ValidateInvoiceOperation, care transformă UnvalidatedInvoice în ValidatedInvoice după ce verifică adresa de facturare, sumele și regulile fiscale.
+  - Rulează CalculateInvoiceTotalsOperation, care produce CalculatedInvoice calculând subtotalul, TVA și totalul de plată.
+  - Rulează MarkInvoiceAsPaidOperation, care combină CalculatedInvoice cu confirmarea de plată și generează PaidInvoice. Din această stare finală se construiește și se publică evenimentul InvoicePaidEvent, folosit de contextul Livrare.
     
 - ShippingWokflow
   - Primește evenimentul InvoicePaidEvent.
@@ -125,20 +124,18 @@ dotnet test
 ## Lecții Învățate
 ### Ce a funcționat bine cu AI
 - Generarea rapidă a structurilor de tip record (C# 9+) pentru stările imutabile.
-- Sugestii pentru implementarea pattern-ului Result<T> pentru a evita excepțiile în flow control.
+- Sugestii pentru implementare.
 - Idei pentru structurarea mesajelor JSON pentru comunicarea asincronă.
 
 ### Limitări ale AI identificate
 - Dificultate în a înțelege nuanțele specifice ale comunicării asincrone între cele 3 contexte (uneori sugera apeluri directe HTTP în loc de mesagerie).
-- Codul generat uneori ignora tratarea cazurilor de eroare (failure paths) în pipeline-uri complexe.
+- Codul generat uneori ignora/uita celelalte script-uri deja existente.
 
 ### Prompturi Utile
 ```
-"Generează o clasă C# record 'Quantity' care să nu permită valori negative 
-și să returneze un 'Result' la creare, în stil funcțional."
+"Generează o clasă C# record 'Money.cs'..."
 ```
 
 ## Design Decisions
 - Am ales să folosim Azure Service Bus pentru comunicarea asincronă între contexte.
-- Logica de domeniu este pură, fără dependențe de baza de date (Persistence Ignorance).
-- Detalii complete în [docs/DesignDecisions.md].
+- Logica de domeniu este pură, fără dependențe de baza de date.
