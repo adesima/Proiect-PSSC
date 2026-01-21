@@ -7,19 +7,17 @@ public class ManifestShipmentOperation
 {
     public override ManifestedShipment Transform(CalculatedShipment shipment, object? _)
     {
-        // 1. Generăm codul AWB (Identificatorul unic)
-        // În realitate, aici ai putea apela un API FanCourier/DPD
-        // Pentru proiect, generăm un cod unic pe loc.
+        // Generez codul AWB
         var awbString = $"AWB-{Guid.NewGuid().ToString().Substring(0, 8).ToUpper()}";
         var awbCode = new AwbCode(awbString);
 
-        // 2. Construim starea finală (ManifestedShipment)
+        // Construiesc starea finala (ManifestedShipment)
         return new ManifestedShipment
         {
             // AWB-ul generat acum
             Awb = awbCode,
             
-            // Copiem datele din starea anterioară
+            // Copiez datele din starea anterioara
             OrderId = shipment.OrderId,
             CustomerId = shipment.CustomerId,
             ShippingAddress = shipment.ShippingAddress,
@@ -28,7 +26,7 @@ public class ManifestShipmentOperation
             // Costul calculat anterior
             ShippingCost = shipment.ShippingCost,
             
-            // Setăm data curentă
+            // Setez data curenta
             ManifestedAt = DateTime.Now
         };
     }

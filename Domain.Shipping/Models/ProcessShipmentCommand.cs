@@ -6,6 +6,6 @@ public class ProcessShipmentCommand
     public Guid CustomerId { get; set; }
     public ShippingAddress ShippingAddress { get; set; } = default!;
     
-    // Lista de produse (ProductCode + Quantity)
+    // Lista de produse 
     public IReadOnlyCollection<ShipmentLine> Lines { get; set; } = Array.Empty<ShipmentLine>();
 }

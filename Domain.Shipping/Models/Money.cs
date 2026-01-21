@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Domain.Shipping.Models; // Modificat din Domain.Invoicing.Models
+namespace Domain.Shipping.Models; 
 
 public record Money
 {

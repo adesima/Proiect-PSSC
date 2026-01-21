@@ -7,9 +7,9 @@ public record UnvalidatedShipment
     public Guid OrderId { get; init; }
     public Guid CustomerId { get; init; }
     
-    // Adresa brută primită, încă nevalidată
+    // Adresa bruta primita, inca nevalidata
     public required ShippingAddress ShippingAddress { get; init; }
     
-    // Lista brută de produse
+    // Lista bruta de produse
     public IReadOnlyCollection<ShipmentLine> Lines { get; init; } = Array.Empty<ShipmentLine>();
 }

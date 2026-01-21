@@ -2,8 +2,6 @@
 
 namespace Shipping.Api.Messaging;
 
-// Acesta este mesajul pe care îl primești (Consumi) de la RabbitMQ/ServiceBus.
-// Semnalează că totul e plătit și marfa poate fi expediată.
 public record InvoicePaidMessage(
     Guid OrderId,
     Guid CustomerId,

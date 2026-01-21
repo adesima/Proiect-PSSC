@@ -1,5 +1,4 @@
-﻿// using System.Data.Entity;
-using Shipping.Data.Models;
+﻿using Shipping.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using DbContext = Microsoft.EntityFrameworkCore.DbContext;
 
@@ -24,7 +23,6 @@ namespace Shipping.Data
                 // Cheia primară
                 entity.HasKey(s => s.ShipmentId);
 
-                // IMPORTANȚĂ CRITICĂ: 
                 // AWB-ul este unic și căutăm după el, deci îi punem un Index
                 entity.HasIndex(s => s.Awb).IsUnique();
 

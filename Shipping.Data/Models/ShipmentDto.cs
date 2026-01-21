@@ -8,13 +8,13 @@ namespace Shipping.Data.Models
         // Primary Key în baza de date
         public Guid ShipmentId { get; set; } 
 
-        // Cheia de business (codul de pe etichetă)
+        // Codul AWB generat pentru expediere
         public string Awb { get; set; } 
 
         public Guid OrderId { get; set; }
         public Guid CustomerId { get; set; }
 
-        // Adresa de LIVRARE (Flattened - coloane directe în tabel)
+        // Adresa de livrare 
         public string County { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
         public string Street { get; set; } = string.Empty;

@@ -11,7 +11,7 @@
         public string Street { get; set; } = string.Empty;
         public string PostalCode { get; set; } = string.Empty;
 
-        // Produsul (Simplificat la o singură linie pentru exemplu)
+        // Produsul 
         public string ProductCode { get; set; } = string.Empty;
         public int Quantity { get; set; }
     }

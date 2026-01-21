@@ -12,10 +12,8 @@ public interface IShipmentManifestedEvent
     // Costul calculat al transportului
     Money ShippingCost { get; }
     
-    // Codul AWB generat (rezultatul principal al muncii tale)
+    // Codul AWB generat 
     AwbCode Awb { get; }
-    
-    
     
     // Data și ora la care s-a generat AWB-ul
     DateTime ManifestedAt { get; }
