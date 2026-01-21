@@ -23,7 +23,70 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 - Shipping Context: Responsabil de generarea AWB-urilor, calculul costului de transport si finalizarea livrarii.
 
 ## Event Storming Results
-[Link către diagrama Event Storming sau imagine exportată din Miro/Lucid] (Aici ar trebui să apară fluxul: OrderPlaced -> InvoiceGenerated -> PaymentSucceeded -> ShippingRequested -> PackageShipped)
+- Context Vanzari:
+  
+- Context Facturare:
+
+```mermaid
+flowchart TD
+    classDef command fill:#2D88EF,stroke:#000,stroke-width:1px,color:white
+    classDef aggregate fill:#F5E942,stroke:#000,stroke-width:1px
+    classDef event fill:#FF9F4B,stroke:#000,stroke-width:1px
+    classDef process fill:#E6E6FA,stroke:#000,stroke-width:1px
+    classDef readmodel fill:#77DD77,stroke:#000,stroke-width:1px
+    classDef policy fill:#DDA0DD,stroke:#000,stroke-width:1px,color:white
+    classDef actorStyle fill:#FFFFFF,stroke:#000,stroke-width:1px
+
+    Order((Order))
+
+    CmdGenInv["Command: GenerateInvoiceDraftCommand"]
+    ProcGen["Process: GenerateInvoiceDraftOperation"]
+    AggInvUnval["Invoice State: UnvalidatedInvoice"]
+
+    ProcInvValid["Process: ValidateInvoiceOperation"]
+    AggInvVal["Invoice State: ValidatedInvoice"]
+
+    ProcCalcInv["Process: CalculateInvoiceTotalsOperation"]
+    AggInvCalc["Invoice State: CalculatedInvoice"]
+
+    EvtPay["Event: PaymentConfirmedEvent"]
+    ProcMarkPaid["Process: MarkInvoiceAsPaidOperation"]
+    AggInvPaid["Invoice State: PaidInvoice"]
+    EvtInvPaid["Event: InvoicePaidEvent"]
+
+    PolSalesToBill["Policy: OrderPlaced → Start BillingWorkflow"]
+    EvtPlaced["Event: OrderPlacedEvent"]
+    PolBillToShip["Policy: InvoicePaidEvent → Trigger Shipping Context"]
+
+    Order --> EvtPlaced
+    EvtPlaced --> PolSalesToBill
+    PolSalesToBill --> CmdGenInv
+
+    CmdGenInv --> ProcGen
+    ProcGen --> AggInvUnval
+
+    AggInvUnval --> ProcInvValid
+    ProcInvValid --> AggInvVal
+
+    AggInvVal --> ProcCalcInv
+    ProcCalcInv --> AggInvCalc
+
+    AggInvCalc --> ProcMarkPaid
+    EvtPay --> ProcMarkPaid
+    ProcMarkPaid --> AggInvPaid
+    AggInvPaid --> EvtInvPaid
+
+    EvtInvPaid --> PolBillToShip
+
+    class CmdGenInv command
+    class AggInvUnval,AggInvVal,AggInvCalc,AggInvPaid aggregate
+    class EvtPlaced,EvtPay,EvtInvPaid event
+    class ProcGen,ProcInvValid,ProcCalcInv,ProcMarkPaid process
+    class PolSalesToBill,PolBillToShip policy
+    class Order actorStyle
+```
+  
+- Context Livrare:
 
 ## Implementare
 ### Value Objects
