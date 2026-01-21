@@ -131,6 +131,74 @@ flowchart TD
 ```
   
 - Context Livrare:
+```mermaid
+flowchart TD
+    classDef command fill:#2D88EF,stroke:#000,stroke-width:1px,color:white
+    classDef aggregate fill:#F5E942,stroke:#000,stroke-width:1px
+    classDef event fill:#FF9F4B,stroke:#000,stroke-width:1px
+    classDef process fill:#E6E6FA,stroke:#000,stroke-width:1px
+    classDef readmodel fill:#77DD77,stroke:#000,stroke-width:1px
+    classDef policy fill:#DDA0DD,stroke:#000,stroke-width:1px,color:white
+    classDef actorStyle fill:#FFFFFF,stroke:#000,stroke-width:1px
+
+    %% Actori si Triggeri Externi
+    BillingContext((Billing Context))
+    
+    %% Input Event
+    EvtInvPaid["Event: InvoicePaidEvent"]
+    
+    %% Listener logic (Policy)
+    PolTrigger["Policy: InvoicePaidListener<br/>(Trigger Workflow)"]
+    
+    %% The Command
+    CmdProcShip["Command: ProcessShipmentCommand"]
+
+    %% Step 1: Entry / Mapping
+    ProcEntry["Process: ProcessShipmentOperation<br/>(Map to Domain)"]
+    StateUnval["State: UnvalidatedShipment"]
+
+    %% Step 2: Validation
+    ProcValid["Process: ValidateShipmentOperation<br/>(Check Address & Items)"]
+    StateVal["State: ValidatedShipment"]
+
+    %% Step 3: Calculation
+    ProcCalc["Process: CalculateShippingCostOperation<br/>(Apply Pricing Rules)"]
+    StateCalc["State: CalculatedShipment"]
+
+    %% Step 4: Manifestation (Final Step)
+    ProcManif["Process: ManifestShipmentOperation<br/>(Generate AWB)"]
+    StateManif["State: ManifestedShipment"]
+
+    %% Output Event
+    EvtManif["Event: ShipmentManifestedEvent"]
+
+    %% Relatii
+    BillingContext --> EvtInvPaid
+    EvtInvPaid --> PolTrigger
+    PolTrigger --> CmdProcShip
+
+    CmdProcShip --> ProcEntry
+    ProcEntry --> StateUnval
+
+    StateUnval --> ProcValid
+    ProcValid --> StateVal
+
+    StateVal --> ProcCalc
+    ProcCalc --> StateCalc
+
+    StateCalc --> ProcManif
+    ProcManif --> StateManif
+
+    StateManif --> EvtManif
+
+    %% Aplicare stiluri
+    class CmdProcShip command
+    class StateUnval,StateVal,StateCalc,StateManif aggregate
+    class EvtInvPaid,EvtManif event
+    class ProcEntry,ProcValid,ProcCalc,ProcManif process
+    class PolTrigger policy
+    class BillingContext actorStyle
+```
 
 ## Implementare
 ### Value Objects
