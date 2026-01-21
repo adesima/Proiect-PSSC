@@ -28,7 +28,6 @@ namespace Sales.Data.Repositories
             return product?.Price;
         }
 
-        // --- Aceasta este metoda care lipsea și dădea eroare ---
         public async Task<bool> HasStockAsync(ProductCode productCode, Quantity quantity)
         {
             return await _dbContext.Products
