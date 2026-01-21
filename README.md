@@ -20,7 +20,7 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 
 - Invoicing (Billing) Context: Responsabil de procesarea plăților, generarea facturilor fiscale pe baza comenzilor validate și calculul taxelor (TVA).
 
-- Shipping Context: Responsabil de generarea AWB-urilor, alocarea curierilor și gestionarea stării livrării către client.
+- Shipping Context: Responsabil de generarea AWB-urilor, calculul costului de transport si finalizarea livrarii.
 
 ## Event Storming Results
 [Link către diagrama Event Storming sau imagine exportată din Miro/Lucid] (Aici ar trebui să apară fluxul: OrderPlaced -> InvoiceGenerated -> PaymentSucceeded -> ShippingRequested -> PackageShipped)
@@ -41,9 +41,9 @@ Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta val
   - TaxRate: procent TVA (ex: 19%).
 
 - Context Livrare:
-  - AwbCode: Format specific curierului (ex: AWB-RO-123456).
-  - PackageWeight: Greutate în kg, strict pozitivă.
-  - ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat)
+  - AwbCode: Format specific curierului.
+  - Moneu:  Valoare zecimală + Monedă, nu permite valori negative.
+  - ShippingAddress: Structură complexă (județ, stradă, oraș, cod poștal)
    
 ### Entity States (Exemplu pentru Workflow-ul "Preluare Comandă")
 Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța verificarea lor la compilare.
@@ -62,9 +62,9 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
 
 - Context Livrare:
   - UnvalidatedShipment: Cererea de livrare brută, venită după plata facturii.
-  - ValidatedShipment: Adresa de livrare e validă, există curier disponibil pentru zona respectivă.
-  - CalculatedShipment: AWB-ul a fost generat, costul de transport calculat.
-  - ManifestedShipment: Curierul a preluat pachetul (stare finală pentru acest workflow).
+  - ValidatedShipment: Adresa de livrare e validă, 
+  - CalculatedShipment: Costul de transport calculat.
+  - ManifestedShipment: AWB-ul a fost generat si livrarea finalizată.
 
 ### Operations
 Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în alta.
@@ -81,10 +81,10 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - MarkInvoiceAsPaid: CalculatedInvoice -> PaidInvoice (Actualizează starea facturii la plătită pe baza confirmării de plată).
 
 - Context Livrare:
-  - ValidateDeliveryAddress: UnvalidatedShipment -> Result<ValidatedShipment> (Verifică dacă adresa e în aria de acoperire).
-  - CalculateShippingCost: ValidatedShipment -> Result<CalculatedShipment> (Calculează cost pe baza greutății/distanței).
-  - GenerateAwb: CalculatedShipment -> ManifestedShipment (Alocă un cod unic AWB).
-  - HandOverToCourier: ManifestedShipment -> ShippedShipment (Marchează plecarea din depozit).
+  - ProcessShipmentOperation: command -> UnvalidatedShipment 
+  - ValidateShipmentOperation: UnvalidatedShipment -> ValidatedShipment
+  - CalculateShippingCostOperation: ValidatedShipment -> CalculatedShipment
+  - ManifestShipmentOperation: CalculatedShipment -> ManifestedShipment
 
 ### Workflow
 - PlaceOrderWorkflow: Acest workflow orchestrează procesul de cumpărare:
@@ -102,11 +102,11 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - La confirmarea plății, marchează factura ca PaidInvoice și publică evenimentul InvoicePaidEvent pentru Shipping.
     
 - ShippingWokflow
-  - Primește evenimentul InvoicePaidEvent (sau OrderPlaced dacă plata e ramburs).
+  - Primește evenimentul InvoicePaidEvent.
   - Creează UnvalidatedShipment.
-  - Validează adresa și disponibilitatea curierului.
+  - Validează adresa
   - Calculează costul transportului și generează AWB.
-  - Publică evenimentul ShippingAWBGenerated (sau PackageShipped).
+  - Publică evenimentul ManifestedShipment.
   
 ## Rulare
 ```bash
@@ -138,6 +138,6 @@ dotnet test
 ```
 
 ## Design Decisions
-- Am ales să folosim Azure Service Bus / RabbitMQ / In-Memory Queue (alege una) pentru comunicarea asincronă între contexte.
+- Am ales să folosim Azure Service Bus pentru comunicarea asincronă între contexte.
 - Logica de domeniu este pură, fără dependențe de baza de date (Persistence Ignorance).
 - Detalii complete în [docs/DesignDecisions.md].
