@@ -286,14 +286,16 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
 ## Rulare
 ```bash
 
-# Compile solution
+# 1. Compile solution
 dotnet build
 
-# Run Ordering Context 
+# 2. Run Sales Context (Terminal 1)
 dotnet run --project Sales.Api
-# Run Billing Context
+
+# 3. Run Billing Context (Terminal 2)
 dotnet run --project Billing.Api
-# Run Shipping Context
+
+# 4. Run Shipping Context (Terminal 3)
 dotnet run --project Shipping.Api
 
 ```
