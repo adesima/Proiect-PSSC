@@ -27,24 +27,25 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 
 ```mermaid
 graph TD
-    %% Stiluri pentru noduri
-    classDef state fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,rx:10,ry:10;
-    classDef operation fill:#fff3e0,stroke:#ff9800,stroke-width:2px,stroke-dasharray: 5 5;
-    classDef db fill:#eeeeee,stroke:#616161,stroke-width:2px;
+    %% Stiluri pentru noduri (Design modern)
+    classDef state fill:#e1f5fe,stroke:#01579b,stroke-width:2px,rx:10,ry:10;
+    classDef operation fill:#fff3e0,stroke:#e65100,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef db fill:#f5f5f5,stroke:#616161,stroke-width:2px;
     classDef bus fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
     classDef error fill:#ffebee,stroke:#c62828,stroke-width:2px;
+    classDef external fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
 
     %% Actorul Extern
-    Client([Client API]) -->|POST /orders| Controller[Sales.Api\nOrderController]
+    Client([Client / API Request]) -->|POST /orders| Controller[Sales.Api\nOrderController]
 
-    subgraph SalesContext [Sales Domain Boundary]
+    subgraph SalesContext [Sales Bounded Context]
         direction TB
         
         %% Fluxul Principal
-        Controller -->|Mapează| State1(UnvalidatedOrder):::state
+        Controller -->|Mapează JSON în| State1(UnvalidatedOrder):::state
         State1 --> Op1[[ValidateOrderOperation]]:::operation
         
-        Op1 --> Check{Este Valid?}
+        Op1 --> Check{Valid?}
         Check -- NU --> StateErr(InvalidOrder):::error
         Check -- DA --> State2(ValidatedOrder):::state
         
@@ -55,16 +56,17 @@ graph TD
         Op3 --> State4(PlacedOrder):::state
     end
 
-    %% Dependințe Externe (Infrastructure)
-    Op3 -->|Persistă Comanda| SQL[(SQL Server\nTable: Orders)]:::db
-    Op3 -->|Publish: OrderConfirmedMessage| ASB{{Azure Service Bus\nTopic: orders-confirmed}}:::bus
+    %% Infrastructura si Comunicarea Externa
+    Op3 -->|Salvează| SQL[(SQL Server\nDatabase)]:::db
+    
+    %% AICI ESTE SCHIMBAREA CERUTA:
+    Op3 -->|Publică: OrderPlacedEvent| ASB{{Azure Service Bus\nTopic: orders-confirmed}}:::bus
+    
+    ASB -.->|Trigger| Billing(Billing Context\nOrderPlacedListener):::external
 
-    %% Răspunsuri
+    %% Răspunsuri API
     State4 -.->|200 OK| Client
     StateErr -.->|400 Bad Request| Client
-
-    %% Legendă (Opțional, pentru claritate)
-    %% linkStyle default stroke:#333,stroke-width:1px;
 ```
 
 - Context Facturare:
