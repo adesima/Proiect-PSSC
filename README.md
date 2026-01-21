@@ -289,11 +289,13 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
 # Compile solution
 dotnet build
 
-# Run Ordering Context (Console App)
-dotnet run --project src/Ordering.ConsoleApp
+# Run Ordering Context 
+dotnet run --project Sales.Api
+# Run Billing Context
+dotnet run --project Billing.Api
+# Run Shipping Context
+dotnet run --project Shipping.Api
 
-# Run Tests
-dotnet test
 ```
 
 ## Lecții Învățate
