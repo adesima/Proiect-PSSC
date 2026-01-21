@@ -29,7 +29,7 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 ### Value Objects
 Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta validitatea datelor la nivelul cel mai jos.
 - Context Vanzari:
-  - ProductCode: Format specific (ex: PROD-12345).
+  - ProductCode: Format strict validat prin Regex (^PROD-[0-9]{4}$ - ex PROD-0001)
   - Quantity: Număr întreg strict pozitiv (>0) limitat la un maxim per comanda.
   - Money: Valoare zecimală + Monedă, nu permite valori negative.
   - Address: Structură imutabilă ce grupează datele de livrare (Oraș, Județ, Stradă), validată la creare.
