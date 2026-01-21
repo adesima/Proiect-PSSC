@@ -31,8 +31,8 @@ Utilizăm Value Objects pentru a preveni "Primitive Obsession" și a garanta val
 - Context Vanzari:
   - ProductCode: Format specific (ex: PROD-12345).
   - Quantity: Număr întreg strict pozitiv (>0) limitat la un maxim per comanda.
-  - Money/Price: Valoare zecimală + Monedă, nu permite valori negative.
-  - ShippingAddress: Structură complexă (stradă, oraș, cod poștal validat).
+  - Money: Valoare zecimală + Monedă, nu permite valori negative.
+  - Address: Structură imutabilă ce grupează datele de livrare (Oraș, Județ, Stradă), validată la creare.
 
 - Context Facturare:
   - InvoiceNumber: cod unic al facturii. 
@@ -50,9 +50,10 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
 
 - Context Vanzari:
   - UnvalidatedOrder: Comanda brută primită de la client (poate avea stoc lipsă, adresă invalidă).
-  - ValidatedOrder: Comanda a trecut validările, stocul este rezervat.
-  - CalculatedOrder: Prețul total (inclusiv discount-uri) a fost aplicat.
+  - ValidatedOrder: Datele au fost convertite în Value Objects și validate (ex: stocul există, cantitățile sunt corecte).
+  - CalculatedOrder: S-au aplicat prețurile unitare din baza de date și s-a calculat totalul comenzii.
   - PlacedOrder: Starea finală în acest context. Comanda este salvată și confirmată, fiind emis un eveniment pentru a notifica Billing Context.
+  - InvalidOrder: Stare rezultată în cazul eșuării oricărei validări anterioare, conținând lista motivelor de eroare (fără a arunca excepții în flow).
 
 - Context Facturare:
   - UnvalidatedInvoice: Factură inițială derivată dintr-o comandă, care poate avea date fiscale sau adresă de facturare invalide / incomplete.
@@ -70,9 +71,9 @@ Stările sunt modelate ca tipuri distincte (clase/record-uri) pentru a forța ve
 Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în alta.
 
 - Context Vanzari:
-  - ValidateOrder: UnvalidatedOrder -> Result<ValidatedOrder> (Verifică formatul adresei și disponibilitatea stocului prin interogarea unui Read Model).
-  - CalculatePrices: ValidatedOrder -> CalculatedOrder (Aplică prețurile unitare din catalog și calculează totalul).
-  - PlaceOrder: CalculatedOrder -> PlacedOrder (Finalizează comanda, persistă starea și publică evenimentul OrderPlacedEvent).
+  - ValidateOrderOperation: UnvalidatedOrder → IOrder (Verifică formatul codurilor de produs și disponibilitatea acestora în baza de date prin IProductRepository). Returnează ValidatedOrder sau InvalidOrder.
+  - CalculatePricesOperation: ValidatedOrder → IOrder (Preia prețurile actuale din DB și calculează totalul per linie și totalul general). Returnează CalculatedOrder sau InvalidOrder.
+  - PlaceOrderOperation: CalculatedOrder → IOrder (Persistă comanda în SQL Server folosind IOrderRepository, decrementează stocul și publică mesajul asincron OrderConfirmedMessage). Returnează PlacedOrder.
 
 - Context Facturare:
   - GenerateInvoiceDraft: UnvalidatedOrder -> Result<UnvalidatedInvoice> (Construiește un draft de factură pe baza comenzii, fără garanții de validitate fiscală).
@@ -87,12 +88,12 @@ Operațiile sunt funcții pure (pe cât posibil) care transformă o stare în al
   - ManifestShipmentOperation: CalculatedShipment -> ManifestedShipment
 
 ### Workflow
-- PlaceOrderWorkflow: Acest workflow orchestrează procesul de cumpărare:
-  - Primește PlaceOrderCommand.
-  - Execută ValidateOrder.
-  - Dacă e valid, execută CalculatePrices.
-  - Execută PlaceOrder.
-  - Publică evenimentul OrderPlacedEvent pe Service Bus (trigger pentru Billing).
+- PlaceOrderWorkflow: Acest workflow orchestrează procesul de cumpărare (Pipeline):
+  - Primește starea inițială UnvalidatedOrder (convertită din PlaceOrderRequest în Controller).
+  - Execută ValidateOrderOperation (returnează ValidatedOrder sau InvalidOrder).
+  - Dacă rezultatul e valid, execută CalculatePricesOperation (returnează CalculatedOrder).
+  - Execută PlaceOrderOperation (salvează comanda în DB și returnează PlacedOrder).
+  - Ca efect secundar (Side Effect) al ultimei operații, publică mesajul de integrare OrderConfirmedMessage pe topicul orders-confirmed din Azure Service Bus.
 
 - BillingWorkflow:
   - Primește eveniment OrderPlacedEvent.
