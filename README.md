@@ -24,7 +24,49 @@ Fiecare membru al echipei este responsabil de unul dintre următoarele contexte:
 
 ## Event Storming Results
 - Context Vanzari:
-  
+
+```mermaid
+graph TD
+    %% Stiluri pentru noduri
+    classDef state fill:#e3f2fd,stroke:#1565c0,stroke-width:2px,rx:10,ry:10;
+    classDef operation fill:#fff3e0,stroke:#ff9800,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef db fill:#eeeeee,stroke:#616161,stroke-width:2px;
+    classDef bus fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+    classDef error fill:#ffebee,stroke:#c62828,stroke-width:2px;
+
+    %% Actorul Extern
+    Client([Client API]) -->|POST /orders| Controller[Sales.Api\nOrderController]
+
+    subgraph SalesContext [Sales Domain Boundary]
+        direction TB
+        
+        %% Fluxul Principal
+        Controller -->|Mapează| State1(UnvalidatedOrder):::state
+        State1 --> Op1[[ValidateOrderOperation]]:::operation
+        
+        Op1 --> Check{Este Valid?}
+        Check -- NU --> StateErr(InvalidOrder):::error
+        Check -- DA --> State2(ValidatedOrder):::state
+        
+        State2 --> Op2[[CalculatePricesOperation]]:::operation
+        Op2 --> State3(CalculatedOrder):::state
+        
+        State3 --> Op3[[PlaceOrderOperation]]:::operation
+        Op3 --> State4(PlacedOrder):::state
+    end
+
+    %% Dependințe Externe (Infrastructure)
+    Op3 -->|Persistă Comanda| SQL[(SQL Server\nTable: Orders)]:::db
+    Op3 -->|Publish: OrderConfirmedMessage| ASB{{Azure Service Bus\nTopic: orders-confirmed}}:::bus
+
+    %% Răspunsuri
+    State4 -.->|200 OK| Client
+    StateErr -.->|400 Bad Request| Client
+
+    %% Legendă (Opțional, pentru claritate)
+    %% linkStyle default stroke:#333,stroke-width:1px;
+```
+
 - Context Facturare:
 
 ```mermaid
